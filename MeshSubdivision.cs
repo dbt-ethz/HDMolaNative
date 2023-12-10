@@ -190,7 +190,7 @@ namespace Mola
 
         }
         /// <summary>
-        /// splits all triangle or quad faces in a MolaMesh into a regular grid
+        /// splits all triangle or quad faces in a MolaMesh into regular grids
         /// </summary>
         /// <param name="molaMesh"></param>
         /// <param name="nU"></param>

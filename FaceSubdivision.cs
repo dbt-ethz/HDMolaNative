@@ -8,7 +8,6 @@ using System.Linq;
 		public FaceSubdivision()
 		{
 		}
-
     private static List<Vec3> VerticesBetween(Vec3 v1, Vec3 v2, int n)
     {
         List<Vec3> rowList = new List<Vec3>();
@@ -22,7 +21,6 @@ using System.Linq;
 
         return rowList;
     }
-
     public static List<Vec3[]> LinearSplitQuad(IList<Vec3> vertices, float minSegmentWidth = 1, float maxSegmentWidth = 2, int dir = 0)
     {
         List<Vec3[]> faces = new List<Vec3[]>();
@@ -89,7 +87,6 @@ using System.Linq;
         }
         return faces;
     }
-
     public static List<Vec3[]> LinearSplitQuadBorder(IList<Vec3> vertices, float borderWidth1 = 1, float borderWidth2 = 1,int dir = 0)
     {
         List<Vec3[]> faces = new List<Vec3[]>();
@@ -160,7 +157,6 @@ using System.Linq;
         }
         return faces;
     }
-
     public static List<Vec3[]> LinearSplitQuad(IList<Vec3> vertices, float maxWidth = 1, int dir = 0)
     {
         List<Vec3[]> faces = new List<Vec3[]>();
@@ -233,8 +229,6 @@ using System.Linq;
         Vec3 p2 = UtilsVertex.vertex_between_abs(v2, v1, w2);
         return new List<Vec3>() { v1, p1, p2, v2 };
     }
-
-
     /// <summary>
     /// Extrudes the face straight by distance height.
     /// </summary>

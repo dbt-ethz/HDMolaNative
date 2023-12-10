@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+//using Unity.VisualScripting.YamlDotNet.Core.Tokens;
+
+// using static UnityEditor.FilePathAttribute;
 
 namespace Mola
 {
@@ -111,7 +114,7 @@ namespace Mola
             }
         }
 
-        public void SetColorToAllVertices(Color? c=null)
+        public void SetColorToAllVertices(Color? c = null)
         {
             vertexColors.Clear();
             for (int i = 0; i < vertices.Count; i++)
@@ -776,7 +779,7 @@ namespace Mola
             else
             {
                 bool[] mask = new bool[faces.Count];
-                Array.Fill(mask, true);
+                mask = Enumerable.Repeat(true, faces.Count).ToArray();
                 for (int i = 0; i < faceIds.Count; i++)
                 {
                     mask[faceIds[i]] = false;
@@ -787,15 +790,17 @@ namespace Mola
             }
 
         }
-        public MolaMesh CopySubMeshByModulo(int result,int modulo, bool invert=false)
+        public MolaMesh CopySubMeshByModulo(int result, int modulo, bool invert = false)
         {
             MolaMesh newMesh = this.CopyVertices();
             for (int i = 0; i < faces.Count; i++)
             {
-                if (!invert) { 
-                if (i % modulo == result) { 
-                    newMesh.AddFace(CopyFace(i));
-                }
+                if (!invert)
+                {
+                    if (i % modulo == result)
+                    {
+                        newMesh.AddFace(CopyFace(i));
+                    }
                 }
                 else
                 {
@@ -810,14 +815,14 @@ namespace Mola
             newMesh.RemoveUnusedVertices();
             return newMesh;
         }
-        public MolaMesh CopySubMeshByEdgeLength(float min, float max, int edgeIndex=0, bool invert = false)
+        public MolaMesh CopySubMeshByEdgeLength(float min, float max, int edgeIndex = 0, bool invert = false)
         {
             MolaMesh newMesh = this.CopyVertices();
             for (int i = 0; i < faces.Count; i++)
             {
                 int[] face = faces[i];
                 int e1 = edgeIndex % face.Length;
-                int e2 = (edgeIndex+1) % face.Length;
+                int e2 = (edgeIndex + 1) % face.Length;
                 Vec3 v1 = vertices[face[e1]];
                 Vec3 v2 = vertices[face[e2]];
                 float mag = (v2 - v1).magnitude;
@@ -1009,30 +1014,16 @@ namespace Mola
             newMesh.RemoveUnusedVertices();
             return newMesh;
         }
-        public MolaMesh CopySubMesh(bool[] mask, bool invert = false)
+        public MolaMesh CopySubMesh(bool[] mask)
         {
             MolaMesh newMesh = this.CopyVertices();
-            if(invert == false)
+            for (int i = 0; i < mask.Length; i++)
             {
-                for (int i = 0; i < mask.Length; i++)
+                if (mask[i])
                 {
-                    if (mask[i])
-                    {
-                        newMesh.AddFace(CopyFace(i));
-                    }
+                    newMesh.AddFace(CopyFace(i));
                 }
             }
-            else
-            {
-                for (int i = 0; i < mask.Length; i++)
-                {
-                    if (!mask[i])
-                    {
-                        newMesh.AddFace(CopyFace(i));
-                    }
-                }
-            }
-            
             newMesh.RemoveUnusedVertices();
             return newMesh;
         }
@@ -1048,7 +1039,7 @@ namespace Mola
             int l = faces[i].Length;
             int[] copyFace = new int[l];
 
-            Array.Copy(faces[i], copyFace,l);
+            Array.Copy(faces[i], copyFace, l);
             return copyFace;
         }
         public MolaMesh CopySubMesh(int faceId, bool invert = false)
