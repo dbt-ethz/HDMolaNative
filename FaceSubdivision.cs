@@ -10,7 +10,7 @@ using System.Linq;
 		}
     private static List<Vec3> VerticesBetween(Vec3 v1, Vec3 v2, int n)
     {
-        List<Vec3> rowList = new List<Vec3>();
+        List<Vec3> rowList = new();
         Vec3 deltaV = (v2 - v1) / n;
         for (int i = 0; i < n; i++)
         {
@@ -23,9 +23,9 @@ using System.Linq;
     }
     public static List<Vec3[]> LinearSplitQuad(IList<Vec3> vertices, float minSegmentWidth = 1, float maxSegmentWidth = 2, int dir = 0)
     {
-        List<Vec3[]> faces = new List<Vec3[]>();
-        List<Vec3> list0 = new List<Vec3>();
-        List<Vec3> list1 = new List<Vec3>();
+        List<Vec3[]> faces = new();
+        List<Vec3> list0 = new();
+        List<Vec3> list1 = new();
         Vec3 v0 = vertices[0];
         Vec3 v1 = vertices[1];
         Vec3 v2 = vertices[2];
@@ -45,7 +45,7 @@ using System.Linq;
                 float fac = cLength / totalLength;
                 list0.Add(v0 + v01 * fac);
                 list1.Add(v3 + v32 * fac);
-                Random rand = new Random();
+                Random rand = new();
                 float d = (float)rand.NextDouble() * (maxSegmentWidth - minSegmentWidth) + minSegmentWidth;
                 cLength += d;
             }
@@ -72,7 +72,7 @@ using System.Linq;
                 float fac = cLength / totalLength;
                 list0.Add(v0 + v03 * fac);
                 list1.Add(v1 + v12 * fac);
-                Random rand = new Random();
+                Random rand = new();
                 float d = (float)rand.NextDouble() * (maxSegmentWidth - minSegmentWidth) + minSegmentWidth;
                 cLength += d;
             }
@@ -159,9 +159,9 @@ using System.Linq;
     }
     public static List<Vec3[]> LinearSplitQuad(IList<Vec3> vertices, float maxWidth = 1, int dir = 0)
     {
-        List<Vec3[]> faces = new List<Vec3[]>();
-        List<Vec3> list0 = new List<Vec3>();
-        List<Vec3> list1 = new List<Vec3>();
+        List<Vec3[]> faces = new();
+        List<Vec3> list0 = new();
+        List<Vec3> list1 = new();
         Vec3 v0 = vertices[0];
         Vec3 v1 = vertices[1];
         Vec3 v2 = vertices[2];
