@@ -3,11 +3,11 @@ using Mola;
 using System.Collections.Generic;
 using System.Linq;
 
-	public class FaceSubdivision
-	{
-		public FaceSubdivision()
-		{
-		}
+public class FaceSubdivision
+{
+    public FaceSubdivision()
+    {
+    }
     private static List<Vec3> VerticesBetween(Vec3 v1, Vec3 v2, int n)
     {
         List<Vec3> rowList = new();
@@ -21,6 +21,16 @@ using System.Linq;
 
         return rowList;
     }
+
+    /// <summary>
+    /// Split a quad face into three quads in one direction 
+    /// by specifying the range to generate random widths of the first two segments.
+    /// </summary>
+    /// <param name="vertices"></param>
+    /// <param name="minSegmentWidth"></param>
+    /// <param name="maxSegmentWidth"></param>
+    /// <param name="dir"></param>
+    /// <returns></returns>
     public static List<Vec3[]> LinearSplitQuad(IList<Vec3> vertices, float minSegmentWidth = 1, float maxSegmentWidth = 2, int dir = 0)
     {
         List<Vec3[]> faces = new();
@@ -87,11 +97,21 @@ using System.Linq;
         }
         return faces;
     }
-    public static List<Vec3[]> LinearSplitQuadBorder(IList<Vec3> vertices, float borderWidth1 = 1, float borderWidth2 = 1,int dir = 0)
+
+    /// <summary>
+    /// Split a quad face into three quads in one direction 
+    /// by specifying the widths of the first two segments.
+    /// </summary>
+    /// <param name="vertices"></param>
+    /// <param name="borderWidth1"></param>
+    /// <param name="borderWidth2"></param>
+    /// <param name="dir"></param>
+    /// <returns></returns>
+    public static List<Vec3[]> LinearSplitQuadBorder(IList<Vec3> vertices, float borderWidth1 = 1, float borderWidth2 = 1, int dir = 0)
     {
-        List<Vec3[]> faces = new List<Vec3[]>();
-        List<Vec3> list0 = new List<Vec3>();
-        List<Vec3> list1 = new List<Vec3>();
+        List<Vec3[]> faces = new();
+        List<Vec3> list0 = new();
+        List<Vec3> list1 = new();
         Vec3 v0 = vertices[0];
         Vec3 v1 = vertices[1];
         Vec3 v2 = vertices[2];
@@ -105,20 +125,18 @@ using System.Linq;
             float startLength = 0;
             float cLength = startLength;
 
-           
+
             float fac1 = borderWidth1 / totalLength;
             float fac2 = borderWidth2 / totalLength;
-            list0.Add(v0 );
+            list0.Add(v0);
             list0.Add(v0 + v01 * fac1);
             list0.Add(v1 - v01 * fac2);
             list0.Add(v1);
-            list1.Add(v3 );
+            list1.Add(v3);
             list1.Add(v3 + v32 * fac1);
             list1.Add(v2 - v32 * fac2);
             list1.Add(v2);
 
-
-            
             list1.Add(v2);
             for (int i = 0; i < list0.Count - 1; i++)
             {
@@ -157,6 +175,15 @@ using System.Linq;
         }
         return faces;
     }
+
+    /// <summary>
+    /// Split a quad face into three quads in one direction 
+    /// by specifying the max width of the segments.
+    /// </summary>
+    /// <param name="vertices"></param>
+    /// <param name="maxWidth"></param>
+    /// <param name="dir"></param>
+    /// <returns></returns>
     public static List<Vec3[]> LinearSplitQuad(IList<Vec3> vertices, float maxWidth = 1, int dir = 0)
     {
         List<Vec3[]> faces = new();
@@ -172,12 +199,12 @@ using System.Linq;
             Vec3 v01 = v1 - v0;
             Vec3 v32 = v2 - v3;
             float totalLength = v01.magnitude;
-            int nSplits = (int)(totalLength / maxWidth)+1;
+            int nSplits = (int)(totalLength / maxWidth) + 1;
             float realwidth = totalLength / nSplits;
             float startLength = 0;
             float cLength = startLength;
 
-            while (cLength < totalLength )
+            while (cLength < totalLength)
             {
                 float fac = cLength / totalLength;
                 list0.Add(v0 + v01 * fac);
@@ -205,7 +232,7 @@ using System.Linq;
             int nSplits = (int)(totalLength / maxWidth) + 1;
             float realwidth = totalLength / nSplits;
 
-            while (cLength < totalLength )
+            while (cLength < totalLength)
             {
                 float fac = cLength / totalLength;
                 list0.Add(v0 + v03 * fac);
@@ -223,14 +250,16 @@ using System.Linq;
         }
         return faces;
     }
+
     private static List<Vec3> VerticesFrame(Vec3 v1, Vec3 v2, float w1, float w2)
     {
         Vec3 p1 = UtilsVertex.vertex_between_abs(v1, v2, w1);
         Vec3 p2 = UtilsVertex.vertex_between_abs(v2, v1, w2);
         return new List<Vec3>() { v1, p1, p2, v2 };
     }
+
     /// <summary>
-    /// Extrudes the face straight by distance height.
+    /// Extrude a face straight by an extrusion height.
     /// </summary>
     /// <param name="face_vertices">An array of Vec3 representing a MolaMesh face</param>
     /// <param name="height">The extrusion distance, default 0</param>
@@ -247,7 +276,7 @@ using System.Linq;
             new_vertices.Add(v + normal);
         }
 
-        List<Vec3[]> new_faces_vertices = new List<Vec3[]>();
+        List<Vec3[]> new_faces_vertices = new();
 
         for (int i = 0; i < face_vertices.Length; i++)
         {
@@ -266,40 +295,42 @@ using System.Linq;
 
         return new_faces_vertices;
     }
+
     /// <summary>
-    /// Extrudes the face to the center point moved by height
-    /// normal to the face and creating a triangular face from
-    /// each edge to the point.
+    /// Extrude a face to a new point offset from its center 
+    /// by a distance along the normal vector of the face and 
+    /// create triangular faces from each edge to the point.
     /// </summary>
     /// <param name="face_vertices"></param>
     /// <param name="height"></param>
     /// <returns></returns>
     public static List<Vec3[]> ExtrudeToPointCenter(Vec3[] face_vertices, float height = 0f)
     {
-        List<Vec3[]> new_faces_vertices = new List<Vec3[]>();
-
         Vec3 normal = UtilsFace.FaceNormal(face_vertices);
         normal *= height;
 
         Vec3 center = UtilsFace.FaceCenter(face_vertices);
         center += normal;
 
-        return FaceSubdivision.ExtrudeToPoint(face_vertices, center);
+        return ExtrudeToPoint(face_vertices, center);
     }
+
     /// <summary>
-    /// Creates an offset frame with quad corners. Works only with convex shapes.
+    /// Offset a face by a distance. 
     /// </summary>
     /// <param name="face_vertices"></param>
     /// <param name="w"></param>
     /// <returns></returns>
-    public static List<Vec3[]> Offset(Vec3[] face_vertices,float offset)
+    public static List<Vec3[]> Offset(Vec3[] face_vertices, float offset)
     {
         float[] offsetArray = new float[face_vertices.Length];
         offsetArray = Enumerable.Repeat(offset, face_vertices.Length).ToArray();
         return Offset(face_vertices, offsetArray);
     }
+
     /// <summary>
-    /// Creates an offset frame with quad corners. Works only with convex shapes.
+    /// Offset a face by specifying individual distances for each face. 
+    /// Only work for convex shapes.
     /// </summary>
     /// <param name="face_vertices"></param>
     /// <param name="w"></param>
@@ -307,7 +338,7 @@ using System.Linq;
     public static List<Vec3[]> Offset(Vec3[] face_vertices, float[] offset)
     {
         List<Vec3> innerVertices = UtilsFace.offset(face_vertices, offset);
-        List<Vec3[]> new_faces_vertices = new List<Vec3[]>();
+        List<Vec3[]> new_faces_vertices = new();
         for (int i = 0; i < face_vertices.Length; i++)
         {
             int iNext = i + 1;
@@ -315,12 +346,12 @@ using System.Linq;
             {
                 iNext = 0;
             }
-           
-            Vec3 v1=face_vertices[i];
+
+            Vec3 v1 = face_vertices[i];
             Vec3 v2 = face_vertices[iNext];
             Vec3 v3 = innerVertices[iNext];
             Vec3 v4 = innerVertices[i];
-            new_faces_vertices.Add(new Vec3[] {v1,v2,v3,v4 });
+            new_faces_vertices.Add(new Vec3[] { v1, v2, v3, v4 });
         }
 
         Vec3[] fInner = innerVertices.ToArray();
@@ -328,22 +359,24 @@ using System.Linq;
 
         return new_faces_vertices;
     }
+
     /// <summary>
-    /// Creates an offset frame with quad corners. Works only with convex shapes.
+    /// Create an offset frame with quad corners from a face. 
+    /// Only work for convex shapes.
     /// </summary>
     /// <param name="face_vertices"></param>
     /// <param name="w"></param>
     /// <returns></returns>
     public static List<Vec3[]> Frame(Vec3[] face_vertices, float w)
     {
-        List<Vec3[]> new_faces_vertices = new List<Vec3[]>();
-        List<Vec3> innerVertices = new List<Vec3>();
+        List<Vec3[]> new_faces_vertices = new();
+        List<Vec3> innerVertices = new();
         for (int i = 0; i < face_vertices.Length; i++)
         {
             Vec3 vp;
             if (i == 0)
             {
-                vp = face_vertices[face_vertices.Length - 1];
+                vp = face_vertices[^1];
             }
             else
             {
@@ -375,8 +408,9 @@ using System.Linq;
 
         return new_faces_vertices;
     }
+
     /// <summary>
-    /// Subidivide face into cells with absolute size
+    /// Split a face into grids with an absolute grid size in x and y directions.
     /// </summary>
     /// <param name="face_vertices"></param>
     /// <param name="x"></param>
@@ -389,10 +423,11 @@ using System.Linq;
         if (u == 0) u = 1;
         if (v == 0) v = 1;
 
-        return FaceSubdivision.Grid(face_vertices, u, v);
+        return Grid(face_vertices, u, v);
     }
+
     /// <summary>
-    /// splits a triangle, quad or a rectangle into a regular grid
+    /// Split a triangle or quad face into a regular grid by u and v resolutions. 
     /// </summary>
     /// <param name="face_vertices"></param>
     /// <param name="nU"></param>
@@ -400,13 +435,13 @@ using System.Linq;
     /// <returns></returns>
     public static List<Vec3[]> Grid(Vec3[] face_vertices, int nU, int nV)
     {
-        List<Vec3[]> new_faces_vertices = new List<Vec3[]>();
+        List<Vec3[]> new_faces_vertices = new();
         if (face_vertices.Length == 4)
         {
             List<Vec3> vsU1 = VerticesBetween(face_vertices[0], face_vertices[1], nU);
             List<Vec3> vsU2 = VerticesBetween(face_vertices[3], face_vertices[2], nU);
 
-            List<List<Vec3>> gridVertices = new List<List<Vec3>>();
+            List<List<Vec3>> gridVertices = new();
             for (int i = 0; i < vsU1.Count; i++)
             {
                 gridVertices.Add(VerticesBetween(vsU1[i], vsU2[i], nV));
@@ -429,7 +464,7 @@ using System.Linq;
             List<Vec3> vsU1 = VerticesBetween(face_vertices[0], face_vertices[1], nU);
             List<Vec3> vsU2 = VerticesBetween(face_vertices[0], face_vertices[2], nU);
 
-            List<List<Vec3>> gridVertices = new List<List<Vec3>>();
+            List<List<Vec3>> gridVertices = new();
             for (int u = 1; u < vsU1.Count; u++)
             {
                 gridVertices.Add(VerticesBetween(vsU1[u], vsU2[u], nV));
@@ -449,7 +484,7 @@ using System.Linq;
                 List<Vec3> vs2 = gridVertices[u + 1];
                 for (int v = 0; v < vs1.Count - 1; v++)
                 {
-                    Vec3[] face = new Vec3[] { vs1[v], vs2[v] ,vs2[v + 1], vs1[v + 1] };
+                    Vec3[] face = new Vec3[] { vs1[v], vs2[v], vs2[v + 1], vs1[v + 1] };
                     new_faces_vertices.Add(face);
                 }
             }
@@ -459,15 +494,15 @@ using System.Linq;
     }
 
     /// <summary>
-    /// Extrudes the face to a point by creating a
-    /// triangular face from each edge to the point.
+    /// Extrude a face to a point by creating
+    /// triangular faces from each edge to the point.
     /// </summary>
     /// <param name="face_vertices">The face to be extruded</param>
     /// <param name="point">The point to extrude to</param>
     /// <returns></returns>
     public static List<Vec3[]> ExtrudeToPoint(Vec3[] face_vertices, Vec3 point)
     {
-        List<Vec3[]> new_faces_vertices = new List<Vec3[]>();
+        List<Vec3[]> new_faces_vertices = new();
 
         int numV = face_vertices.Length;
         for (int i = 0; i < numV; i++)
@@ -479,10 +514,11 @@ using System.Linq;
 
         return new_faces_vertices;
     }
+
     /// <summary>
-    /// Extrudes the face tapered like a window by creating an
-    /// offset face and quads between every original edge and the
-    /// corresponding new edge.
+    /// Extrude a face tapered like a window by creating an
+    /// offset face and quads between each pair of 
+    /// the original edge and the corresponding offset edge.
     /// </summary>
     /// <param name="face_vertices"></param>
     /// <param name="height"></param>
@@ -495,8 +531,8 @@ using System.Linq;
         Vec3 normal = UtilsFace.FaceNormal(face_vertices);
         Vec3 scaled_normal = normal * height;
 
-        //# calculate new vertex positions
-        List<Vec3> new_vertices = new List<Vec3>();
+        // calculate new vertex positions
+        List<Vec3> new_vertices = new();
         for (int i = 0; i < face_vertices.Length; i++)
         {
             Vec3 n1 = face_vertices[i];
@@ -507,7 +543,7 @@ using System.Linq;
             new_vertices.Add(nn);
         }
 
-        //# create the quads along the edges
+        // create the quads along the edges
         List<Vec3[]> new_faces_vertices = new List<Vec3[]>();
         int num = face_vertices.Length;
         for (int i = 0; i < num; i++)
@@ -520,7 +556,7 @@ using System.Linq;
             new_faces_vertices.Add(new_face_vertices);
         }
 
-        //# create the closing cap face
+        // create the closing cap face
         if (capTop)
         {
             Vec3[] cap_face_vertices = new_vertices.ToArray();
@@ -529,15 +565,16 @@ using System.Linq;
 
         return new_faces_vertices;
     }
+
     /// <summary>
-    /// Extrudes a pitched roof
+    /// Extrude a face into a pitched roof by an extrusion height.
     /// </summary>
     /// <param name="face_vertices"></param>
     /// <param name="height"></param>
     /// <returns></returns>
-    public static List<Vec3[]> Roof(Vec3[] face_vertices, float height = 0f,float gableInsetRelative=0)
+    public static List<Vec3[]> Roof(Vec3[] face_vertices, float height = 0f, float gableInsetRelative = 0)
     {
-        List<Vec3[]> new_faces_vertices = new List<Vec3[]>();
+        List<Vec3[]> new_faces_vertices = new();
 
         Vec3 normal = UtilsFace.FaceNormal(face_vertices);
         normal *= height;
@@ -549,7 +586,7 @@ using System.Linq;
             Vec3 ev2 = UtilsVertex.vertex_center(face_vertices[2], face_vertices[3]);
             ev2 += normal;
 
-            Vec3 v12 = (ev2 - ev1)* gableInsetRelative;
+            Vec3 v12 = (ev2 - ev1) * gableInsetRelative;
             ev1 += v12;
             ev2 -= v12;
             new_faces_vertices.Add(new Vec3[] { face_vertices[0], face_vertices[1], ev1 });
