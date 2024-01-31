@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 
 namespace Mola
 {
@@ -13,43 +11,36 @@ namespace Mola
         // avoiding instance creation through rhino vector methods, as this slows down the code
         public static MolaMesh Subdivide(MolaMesh meshInput)
         {
-            MolaMesh newMesh = new MolaMesh();
+            MolaMesh newMesh = new();
             // For each face, add a face point
             // Set each face point to be the average of all original points for the respective face.
 
-           
+
             Vec3[] centers = meshInput.CalculateFaceCenters();
 
-            
-                for (int i = 0; i < meshInput.Faces.Count; i++)
-                {
-                    Vec3 p = centers[i];
-                    newMesh.AddVertex(p.x, p.y, p.z);
-                    //newMeshData.vertLocked.Add(false);
-                    // newMeshData.vertGenerations.Add(Utils.GetMaxVertGeneration(meshInput.Faces[i], inMeshData.vertGenerations) + 1);
-                }
-            
-           
-            
-           
+            for (int i = 0; i < meshInput.Faces.Count; i++)
+            {
+                Vec3 p = centers[i];
+                newMesh.AddVertex(p.x, p.y, p.z);
+                //newMeshData.vertLocked.Add(false);
+                // newMeshData.vertGenerations.Add(Utils.GetMaxVertGeneration(meshInput.Faces[i], inMeshData.vertGenerations) + 1);
+            }
 
             // For each edge, add an edge point.
             // Set each edge point to be the average of the two neighbouring face points and its two original endpoints.
-            ReadOnlyCollection<int[]>edges = meshInput.GetTopoEdges();
+            ReadOnlyCollection<int[]> edges = meshInput.GetTopoEdges();
             for (int i = 0; i < edges.Count; i++)
             {
                 int[] edge = edges[i];
                 int i1 = edge[MolaMesh.VERTEX1];
                 int i2 = edge[MolaMesh.VERTEX2];
-                
-                
-                    Vec3 a = meshInput.Vertices[i1];
-                    Vec3 b = meshInput.Vertices[i2];
-                    float x = (a.x + b.x) / 2f;
-                    float y = (a.y + b.y) / 2f;
-                    float z = (a.z + b.z) / 2f;
-                    newMesh.AddVertex(x, y, z);
-                
+
+                Vec3 a = meshInput.Vertices[i1];
+                Vec3 b = meshInput.Vertices[i2];
+                float x = (a.x + b.x) / 2f;
+                float y = (a.y + b.y) / 2f;
+                float z = (a.z + b.z) / 2f;
+                newMesh.AddVertex(x, y, z);
 
                 //newMeshData.vertLocked.Add(false);
                 //newMeshData.vertGenerations.Add(System.Math.Max(inMeshData.vertGenerations[i1], inMeshData.vertGenerations[i2]));
@@ -64,11 +55,9 @@ namespace Mola
             {
                 //int vertexIndex = meshInput.TopologyVertices.MeshVertexIndices(i)[0];
                 Vec3 p = meshInput.Vertices[i];
-                newMesh.AddVertex(p.x,p.y,p.z);
-                
-                    //newMeshData.vertLocked.Add(false);
-                
+                newMesh.AddVertex(p.x, p.y, p.z);
 
+                //newMeshData.vertLocked.Add(false);
                 //newMeshData.vertGenerations.Add(inMeshData.vertGenerations[vertexIndex]);
 
             }
@@ -100,10 +89,8 @@ namespace Mola
                     edgeVertexIndexPrev = edgeVertexIndex;
                 }
             }
-            
+
         }
     }
-   
-
 
 }

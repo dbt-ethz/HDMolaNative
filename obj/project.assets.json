@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/jiaqwu/Documents/A_Archive/A3_PhD/24FS/ACDC/Library/HDMolaNative/HDMola.csproj",
+      "projectUniqueName": "/Users/jiaqwu/Documents/Workspace/A_Input/24FS/ACDC/Library/HDMolaNative/HDMola.csproj",
       "projectName": "HDMola",
-      "projectPath": "/Users/jiaqwu/Documents/A_Archive/A3_PhD/24FS/ACDC/Library/HDMolaNative/HDMola.csproj",
+      "projectPath": "/Users/jiaqwu/Documents/Workspace/A_Input/24FS/ACDC/Library/HDMolaNative/HDMola.csproj",
       "packagesPath": "/Users/jiaqwu/.nuget/packages/",
-      "outputPath": "/Users/jiaqwu/Documents/A_Archive/A3_PhD/24FS/ACDC/Library/HDMolaNative/obj/",
+      "outputPath": "/Users/jiaqwu/Documents/Workspace/A_Input/24FS/ACDC/Library/HDMolaNative/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/jiaqwu/.nuget/NuGet/NuGet.Config"
