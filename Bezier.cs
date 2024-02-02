@@ -1,21 +1,20 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
+
 namespace Mola
 {
     public class Bezier
 
     {
-        public List<Vec3> controlPoints=new List<Vec3>();
+        public List<Vec3> controlPoints = new();
 
-        public void addControlPoint(Vec3 point)
+        public void AddControlPoint(Vec3 point)
         {
             controlPoints.Add(point);
         }
         public List<Vec3> CalculateQuadtraticBezier(int SEGMENT_COUNT)
         {
-            List<Vec3> polyLine = new List<Vec3>();
-            int curveCount = (int)controlPoints.Count / 3;
+            List<Vec3> polyLine = new();
+            int curveCount = controlPoints.Count / 3;
             for (int j = 0; j < curveCount; j++)
             {
                 for (int i = 0; i <= SEGMENT_COUNT; i++)
@@ -30,12 +29,12 @@ namespace Mola
             return polyLine;
         }
 
-        public Vec3 getPoint(float t)
+        public Vec3 GetPoint(float t)
         {
-            List<Vec3> cPts = new List<Vec3>(controlPoints);
+            List<Vec3> cPts = new(controlPoints);
             while (cPts.Count > 1)
             {
-                List<Vec3> newPts = new List<Vec3>();
+                List<Vec3> newPts = new();
                 for (int i = 0; i < cPts.Count - 1; i++)
                 {
                     Vec3 p1 = cPts[i];
@@ -51,12 +50,12 @@ namespace Mola
             return cPts[0];
         }
 
-        public List<Vec3> getPolyLine(int i)
+        public List<Vec3> GetPolyLine(int i)
         {
-            List<Vec3> poly = new List<Vec3>();
+            List<Vec3> poly = new();
             for (int j = 0; j < i + 1; j++)
             {
-                Vec3 cPt = getPoint(j * 1f / i);
+                Vec3 cPt = GetPoint(j * 1f / i);
                 poly.Add(cPt);
             }
             return poly;
@@ -65,7 +64,7 @@ namespace Mola
 
         public List<Vec3> CalculateCubicBezier(int SEGMENT_COUNT)
         {
-            List<Vec3> polyLine = new List<Vec3>();
+            List<Vec3> polyLine = new();
             int curveCount = (int)controlPoints.Count / 3;
             for (int j = 0; j < curveCount; j++)
             {
