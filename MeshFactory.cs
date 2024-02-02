@@ -223,14 +223,24 @@ namespace Mola
 		/// <param name="y4"></param>
 		/// <param name="z4"></param>
 		/// <param name="color"></param>
-		/// <returns></returns>
-		public static MolaMesh CreateSingleQuad(float x1, float y1, float z1, float x2, float y2, float z2, float x3, float y3, float z3, float x4, float y4, float z4, bool flip = false, Color? color = null)
+		/// <returns>A MolaMesh with a single quad face</returns>
+		public static MolaMesh CreateQuad(float x1, float y1, float z1, float x2, float y2, float z2, float x3, float y3, float z3, float x4, float y4, float z4, bool flip = false, Color? color = null)
 		{
 			MolaMesh mesh = new MolaMesh();
 			AddQuad(mesh, x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4, color ?? Color.white, flip);
 			return mesh;
 
 		}
+		/// <summary>
+		/// Create and returns a circle mesh composed by triangles. 
+		/// </summary>
+		/// <param name="x">X coordinate of the center point</param>
+		/// <param name="y">y coordinate of the center point</param>
+		/// <param name="z">z coordinate of the center point</param>
+		/// <param name="radius">Radius of the circle</param>
+		/// <param name="nSegments">Segments of the circle</param>
+		/// <param name="color"></param>
+		/// <returns>A circle shaped MolaMesh</returns>
 		public static MolaMesh CreateCircle(float x, float y, float z, float radius, int nSegments, Color? color = null)
 		{
 			MolaMesh mesh = new MolaMesh();
@@ -264,8 +274,15 @@ namespace Mola
 			mesh.AddFace(vertices.ToArray());
 			return mesh;
 		}
-
-
+		/// <summary>
+		/// Creates and returns a mesh with a single quad face.
+		/// </summary>
+		/// <param name="dimX"></param>
+		/// <param name="dimY"></param>
+		/// <param name="x"></param>
+		/// <param name="y"></param>
+		/// <param name="z"></param>
+		/// <returns>A MolaMesh with a single quad face</returns>
 		public static MolaMesh CreateQuad(float dimX, float dimY, float x = 0, float y = 0, float z = 0)
 		{
 			float dX = dimX * 0.5f;
@@ -279,7 +296,6 @@ namespace Mola
 			mesh.AddFace(vertices);
 			return mesh;
 		}
-
 		/// <summary>
 		/// Creates and returns a conic cylinder.
 		/// </summary>
@@ -335,8 +351,16 @@ namespace Mola
 			return mesh;
 		}
 		/// <summary>
-		/// Creates and returns a conic cylinder.
+		///  Creates and returns a conic cylinder.
 		/// </summary>
+		/// <param name="z1"></param>
+		/// <param name="z2"></param>
+		/// <param name="radius1"></param>
+		/// <param name="radius2"></param>
+		/// <param name="nSegments"></param>
+		/// <param name="capBottom"></param>
+		/// <param name="capTop"></param>
+		/// <param name="color"></param>
 		/// <returns></returns>
 		public static MolaMesh CreateCone(float z1, float z2, float radius1, float radius2, int nSegments, bool capBottom = true, bool capTop = true, Color? color = null)
 		{
@@ -394,12 +418,6 @@ namespace Mola
 			mesh.UpdateTopology();
 			return mesh;
 		}
-
-
-		/// <summary>
-		/// Creates and returns a conic cylinder.
-		/// </summary>
-		/// <returns></returns>
 		public static MolaMesh CreateConeZ(float z1, float z2, float radius1, float radius2, int nSegments, bool capBottom = true, bool capTop = true, Color? color = null)
 		{
 			MolaMesh mesh = new MolaMesh();
@@ -456,14 +474,18 @@ namespace Mola
 			mesh.UpdateTopology();
 			return mesh;
 		}
-		/// <summary>
-		/// Creates and returns a conic cylinder.
-		/// </summary>
-		/// <returns></returns>
 		public static MolaMesh CreateCylinderZ(float z1, float z2, float radius, int nSegments, bool capBottom = true, bool capTop = true, Color? color = null)
 		{
 			return CreateConeZ(z1, z2, radius, radius, nSegments, capBottom, capTop, color);
 		}
+		/// <summary>
+		/// Creates and returns a tube MolaMesh
+		/// </summary>
+		/// <param name="a"></param>
+		/// <param name="b"></param>
+		/// <param name="segments"></param>
+		/// <param name="radius"></param>
+		/// <returns></returns>
 		public static MolaMesh CreateTube(Vec3 a, Vec3 b, int segments, float radius)
 		{
 			List<Vec3> profile = UtilsVertex.getCircle(0, 0, radius, segments);
@@ -489,7 +511,6 @@ namespace Mola
 			return mesh;
 
 		}
-
 		public static MolaMesh CreateExtrudedQuad(IEnumerable<Vec3> planarQuad, Vec3 extrusion, Color? color = null)
 		{
 
@@ -511,7 +532,6 @@ namespace Mola
 			return mesh;
 
 		}
-
 		public static MolaMesh CreateGridMesh(IList<Vec3> vertices, int nU, int nV, bool uClosed)
 		{
 

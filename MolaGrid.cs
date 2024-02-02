@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 namespace Mola
 {
+    /// <summary>
+    /// A `GridManager` is taking care of getting and setting values
+    /// and retrieving neighbors in an orthogonal grid of either 2 or 3 dimension.
+    /// </summary>
     public class MolaGrid<T> : IEnumerable
     {
         public MolaGrid(int nX, int nY, int nZ)

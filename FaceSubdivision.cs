@@ -263,6 +263,29 @@ using System.Linq;
         {
             new_faces_vertices.Add(new_vertices.ToArray());
         }
+        // optimize
+        Vec3[] newVertices = new Vec3[face_vertices.Length];
+        for (int i = 0; i <face_vertices.Length; i++)
+        {
+            newVertices[i] = face_vertices[i] + normal;
+        }
+        // if(!capTop)
+        // {
+        //     Vec3[][] newFaceVertices = new Vec3[face_vertices.Length][];
+        //     for (int i = 0; i < face_vertices.Length; i++)
+        //     {
+        //         Vec3 v0 = face_vertices[i];
+        //         Vec3 v1 = face_vertices[(i + 1) % face_vertices.Length];
+        //         Vec3 v2 = new_vertices[(i + 1) % face_vertices.Length];
+        //         Vec3 v3 = new_vertices[i];
+
+        //         newFaceVertices[i] = new Vec3[] { v0, v1, v2, v3 };
+        //     }
+        // }
+        // else
+        // {
+
+        // }
 
         return new_faces_vertices;
     }

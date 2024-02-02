@@ -10,6 +10,9 @@ namespace Mola
 {
     public class MolaMesh
     {
+        /// <summary>
+        /// A mesh describes a 3D surface made of vertices connected by faces
+        /// </summary>
         List<Vec3> vertices;
         List<int[]> faces;
         private List<Color> vertexColors;
@@ -519,6 +522,9 @@ namespace Mola
             }
             return indices;
         }
+        /// <summary>
+        /// Update the topology of a MolaMesh
+        /// </summary>
         public void UpdateTopology()
         {
             // TODO Auto-generated method stub
@@ -542,6 +548,9 @@ namespace Mola
                 }
             }
         }
+        /// <summary>
+        /// Merge all overlapping vertices 
+        /// </summary>
         public void WeldVertices()
         {
             List<Vec3> welded_vertices = new List<Vec3>();
@@ -902,7 +911,6 @@ namespace Mola
             newMesh.RemoveUnusedVertices();
             return newMesh;
         }
-
         public MolaMesh CopySubMeshByNormalZ(float minZ, float maxZ, bool abs = false, bool invert = false)
         {
             MolaMesh newMesh = this.CopyVertices();
@@ -936,7 +944,6 @@ namespace Mola
             newMesh.RemoveUnusedVertices();
             return newMesh;
         }
-
         public MolaMesh CopySubMeshByNormalX(float minX, float maxX, bool abs = false, bool invert = false)
         {
             MolaMesh newMesh = this.CopyVertices();
@@ -968,7 +975,6 @@ namespace Mola
             newMesh.RemoveUnusedVertices();
             return newMesh;
         }
-
         public MolaMesh CopySubMeshByNormalY(float minY, float maxY, bool abs = false, bool invert = false)
         {
             MolaMesh newMesh = this.CopyVertices();
@@ -1000,7 +1006,6 @@ namespace Mola
             newMesh.RemoveUnusedVertices();
             return newMesh;
         }
-
         public MolaMesh CopySubMeshByFaceVertexCount(int vertexC = 3)
         {
             MolaMesh newMesh = this.CopyVertices();
@@ -1094,7 +1099,6 @@ namespace Mola
         {
             return UtilsFace.FaceEdgeLength(FaceVertices(faceIndex), direction);
         }
-
         public float FaceArea(int faceIndex)
         {
             return UtilsFace.FaceAreaTriOrQuad(FaceVertices(faceIndex));

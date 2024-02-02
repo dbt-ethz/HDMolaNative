@@ -10,14 +10,14 @@ namespace Mola
     {
         /// <summary>
         /// Creates an offset of a mesh.
-        /// If `doclose` is `True`, it will create quad faces
+        /// If `doclose` is `true`, it will create quad faces
         /// along the naked edges of an open input mesh.
         /// </summary>
-        /// <param name="mesh"></param>
-        /// <param name="offset"></param>
-        /// <param name="closeborders"></param>
+        /// <param name="mesh">A MolaMesh</param>
+        /// <param name="offset">Offset distance</param>
+        /// <param name="closeborders">Wether to close the borders or not</param>
         /// <param name="constrainZ"></param>
-        /// <returns></returns>
+        /// <returns>The result MolaMesh</returns>
         public static MolaMesh MeshOffset(MolaMesh mesh, float offset, bool closeborders=true, bool constrainZ=false)
         {
             // calculate normals per vertex
