@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Mola
 {
-    public class UtilsMesh
+    public class MeshOffset
     {
         /// <summary>
         /// Creates an offset of a mesh.
@@ -18,7 +18,7 @@ namespace Mola
         /// <param name="closeborders">Wether to close the borders or not</param>
         /// <param name="constrainZ"></param>
         /// <returns>The result MolaMesh</returns>
-        public static MolaMesh MeshOffset(MolaMesh mesh, float offset, bool closeborders=true, bool constrainZ=false)
+        public static MolaMesh Offset(MolaMesh mesh, float offset, bool closeborders=true, bool constrainZ=false)
         {
             // calculate normals per vertex
             // create new vertices and duplicate faces
