@@ -1,12 +1,12 @@
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System;
+using System.Text;
 using System.Linq;
+using System.Collections.ObjectModel;
 
 namespace Mola
 {
-    public class MeshOffset
+    class MeshUtils
     {
         /// <summary>
         /// Creates an offset of a mesh.
@@ -18,7 +18,7 @@ namespace Mola
         /// <param name="closeborders">Wether to close the borders or not</param>
         /// <param name="constrainZ"></param>
         /// <returns>The result MolaMesh</returns>
-        public static MolaMesh Offset(MolaMesh mesh, float offset, bool closeborders=true, bool constrainZ=false)
+        public static MolaMesh Offset(MolaMesh mesh, float offset, bool closeborders = true, bool constrainZ = false)
         {
             // calculate normals per vertex
             // create new vertices and duplicate faces
@@ -45,7 +45,7 @@ namespace Mola
                 n += mesh.Vertices[i];
                 mesh.AddVertex(n.x, n.y, n.z);
             }
-            
+
             for (int i = 0; i < nFaces; i++)
             {
                 int[] face = mesh.Faces[i];
@@ -85,6 +85,64 @@ namespace Mola
                 mesh.Faces[i] = Enumerable.Reverse(mesh.Faces[i]).ToArray();
             }
             return mesh;
+        }
+        public static List<MolaMesh> Split(MolaMesh molaMesh, bool[] mask)
+        {
+            if(mask.Length != molaMesh.FacesCount())
+            {
+                throw new ArgumentException("mask array count doesn't match face count!");
+            }
+            MolaMesh m1 = molaMesh.CopySubMesh(mask);
+            mask = mask.Select(b => !b).ToArray(); 
+            MolaMesh m2 = molaMesh.CopySubMesh(mask);
+
+            return new List<MolaMesh> { m1, m2 };
+        }
+        public static List<MolaMesh> Split(MolaMesh molaMesh, List<bool> mask)
+        {
+            bool[] maskArray = mask.ToArray();
+
+            return Split(molaMesh, maskArray);
+        }
+        public static MolaMesh Merge(List<MolaMesh> molaMeshes)
+        {
+            MolaMesh molaMesh = new MolaMesh();
+            for (int i = 0; i < molaMeshes.Count; i++)
+            {
+                molaMesh.AddMesh(molaMeshes[i]);
+            }
+            return molaMesh;
+        }
+        public static MolaMesh Color(MolaMesh molaMesh, List<float> values)
+        {
+            if (values.Count != molaMesh.FacesCount())
+            {
+                throw new ArgumentException("value list count doesn't match face count!");
+            }
+            UtilsFace.ColorFaceByValue(molaMesh, values);
+            return molaMesh;
+        }
+        public static MolaMesh Color(MolaMesh molaMesh, System.Drawing.Color color)
+        {
+            Color mColor = new Color((float)color.R / 255, (float)color.G / 255, (float)color.B / 255, (float)color.A / 255);
+            molaMesh.Colors = Enumerable.Repeat(mColor, molaMesh.VertexCount()).ToList();
+            return molaMesh;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="values"></param>
+        /// <param name="filter"></param>
+        /// <returns></returns>
+        /// <example>
+        /// MolaMesh molaMesh = MeshFactory.CreateSphere();
+        /// List<float> faceArea = MeshAnalysis.FaceArea(molaMesh);
+        /// Predicate<float> filter = a => a > 1;
+        /// bool[] mask = MeshUtils.FaceMask(faceArea, filter);
+        /// </example>
+        public static bool[] FaceMask(List<float> values, Predicate<float> filter)
+        {
+            return values.Select(a => filter(a)).ToArray();
         }
     }
 }

@@ -46,7 +46,7 @@ namespace Mola
         {
             if(heights.Count != molaMesh.FacesCount() || capTops.Count != molaMesh.FacesCount())
             {
-                throw new ArgumentException("list counts doesn't match face count!");
+                throw new ArgumentException("list count doesn't match face count!");
             }
             MolaMesh newMesh = new MolaMesh();
             for (int i = 0; i < molaMesh.Faces.Count; i++)
@@ -88,7 +88,7 @@ namespace Mola
         {
             if (nUList.Count != molaMesh.FacesCount() || nVList.Count != molaMesh.FacesCount())
             {
-                throw new ArgumentException("list counts doesn't match face count!");
+                throw new ArgumentException("list count doesn't match face count!");
             }
             MolaMesh newMesh = new MolaMesh();
             for (int i = 0; i < molaMesh.Faces.Count; i++)
@@ -285,7 +285,7 @@ namespace Mola
         {
             if (heights.Count != molaMesh.FacesCount() || capTops.Count != molaMesh.FacesCount())
             {
-                throw new ArgumentException("list counts doesn't match face count!");
+                throw new ArgumentException("list count doesn't match face count!");
             }
             MolaMesh newMesh = new MolaMesh();
             for (int i = 0; i < molaMesh.FacesCount(); i++)
@@ -328,7 +328,7 @@ namespace Mola
         {
             if (heightList.Count != molaMesh.FacesCount())
             {
-                throw new ArgumentException("list counts doesn't match face count!");
+                throw new ArgumentException("list count doesn't match face count!");
             }
             MolaMesh newMesh = new();
             for (int i = 0; i < molaMesh.Faces.Count; i++)
@@ -371,7 +371,7 @@ namespace Mola
         {
             if (heightList.Count != molaMesh.FacesCount())
             {
-                throw new ArgumentException("list counts doesn't match face count!");
+                throw new ArgumentException("list count doesn't match face count!");
             }
             MolaMesh newMesh = new MolaMesh();
             for (int i = 0; i < molaMesh.Faces.Count; i++)
@@ -412,7 +412,7 @@ namespace Mola
         {
             if (wList.Count != molaMesh.FacesCount())
             {
-                throw new ArgumentException("list counts doesn't match face count!");
+                throw new ArgumentException("list count doesn't match face count!");
             }
             MolaMesh newMesh = new MolaMesh();
             for (int i = 0; i < molaMesh.Faces.Count; i++)

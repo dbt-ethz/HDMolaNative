@@ -8,24 +8,31 @@
     ".NETStandard,Version=v2.1": []
   },
   "packageFolders": {
-    "/Users/jiaqwu/.nuget/packages/": {}
+    "C:\\Users\\Wenqian\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/jiaqwu/Documents/Workspace/A_Input/24FS/ACDC/Library/HDMolaNative/HDMola.csproj",
+      "projectUniqueName": "C:\\D\\GitHub\\HDMolaNative\\HDMola.csproj",
       "projectName": "HDMola",
-      "projectPath": "/Users/jiaqwu/Documents/Workspace/A_Input/24FS/ACDC/Library/HDMolaNative/HDMola.csproj",
-      "packagesPath": "/Users/jiaqwu/.nuget/packages/",
-      "outputPath": "/Users/jiaqwu/Documents/Workspace/A_Input/24FS/ACDC/Library/HDMolaNative/obj/",
+      "projectPath": "C:\\D\\GitHub\\HDMolaNative\\HDMola.csproj",
+      "packagesPath": "C:\\Users\\Wenqian\\.nuget\\packages\\",
+      "outputPath": "C:\\D\\GitHub\\HDMolaNative\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/Users/jiaqwu/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Wenqian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -49,23 +56,16 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "NETStandard.Library.Ref",
-            "version": "[2.1.0, 2.1.0]"
-          }
-        ],
         "frameworkReferences": {
           "NETStandard.Library": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.312/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
       }
     }
   }

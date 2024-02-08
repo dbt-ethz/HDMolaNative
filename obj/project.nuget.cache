@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "enNS0Yxtout/sJfIxIARfIaOzl3CjKRtrbvw/LqIj8CNCAocHNcKf96JZfd7SLYKMrHLSY6eowC16V4Fn+2Jsw==",
+  "dgSpecHash": "4ER5aaoTwbjaOfTEiWoxVN3obNHUNFWcCjixFlFvYFLINbOwySmB1rQb0zkPDlMiG7ahkDN2rr1rosrH0fNm0Q==",
   "success": true,
-  "projectFilePath": "/Users/jiaqwu/Documents/Workspace/A_Input/24FS/ACDC/Library/HDMolaNative/HDMola.csproj",
-  "expectedPackageFiles": [
-    "/Users/jiaqwu/.nuget/packages/netstandard.library.ref/2.1.0/netstandard.library.ref.2.1.0.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\D\\GitHub\\HDMolaNative\\HDMola.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

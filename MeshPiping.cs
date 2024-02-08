@@ -91,7 +91,6 @@ namespace Mola
 
             return pipe;
         }
-
         public static Matrix4x4 TransformMatrix(Vec3 from1,Vec3 to1,Vec3 up1, Vec3 from2, Vec3 to2, Vec3 up2)
         {
             Matrix4x4 ma = Matrix4x4.FromFrame(from1, to1, up1);
@@ -99,7 +98,6 @@ namespace Mola
             
             return mb* ma;
         }
-
         public static MolaMesh PipePolyLineWithConvexProfile(List<Vec3> nodes, List<Vec3> profile, Vec3 up, bool closeStart, bool closeEnd)
         {
             MolaMesh pipe = new MolaMesh();

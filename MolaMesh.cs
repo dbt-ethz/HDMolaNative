@@ -116,7 +116,6 @@ namespace Mola
                 vertexColors[i] = color;
             }
         }
-
         public void SetColorToAllVertices(Color? c = null)
         {
             vertexColors.Clear();

@@ -187,8 +187,6 @@ namespace Mola
         {
             ColorFaceByValue(mesh, mesh.Faces, values, doGrayScale);
         }
-
-
         public static float Area2D(IList<Vec3> Vec3s)
         {
             float area = 0;
@@ -200,7 +198,6 @@ namespace Mola
             }
             return area / 2f;
         }
-
         public static Vec3 AverageCenter(IList<Vec3> nodes)
         {
             Vec3 center = new Vec3();
@@ -211,14 +208,12 @@ namespace Mola
             center /= (1f * nodes.Count);
             return center;
         }
-
         public static List<Vec3> offset(IList<Vec3> pts, float offset)
         {
             float[] offsets = new float[pts.Count];
             offsets = Enumerable.Repeat(offset, pts.Count).ToArray();
             return UtilsFace.offset(pts, offsets);
         }
-
         public static List<Vec3> offset(IList<Vec3> pts, float[] offset)
         {
             List<Vec3> offsetVec3s = new List<Vec3>();
@@ -239,7 +234,6 @@ namespace Mola
             }
             return offsetVec3s;
         }
-
         public static Vec3 offset(Vec3 a, Vec3 b, Vec3 c, float offsetAB, float offsetBC, Plane planeABC)
         {
 
@@ -255,6 +249,5 @@ namespace Mola
             planeABC.LinePlaneIntersection(line[0], line[1], out Vec3 intersection);
             return intersection;
         }
-
     }
 }
