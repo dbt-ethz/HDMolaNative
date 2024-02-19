@@ -2,17 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-//using Unity.VisualScripting.YamlDotNet.Core.Tokens;
-
-// using static UnityEditor.FilePathAttribute;
 
 namespace Mola
 {
+    /// <summary>
+    /// A mesh describes a 3D surface made of Vertices connected by Faces.
+    /// </summary>
     public class MolaMesh
     {
-        /// <summary>
-        /// A mesh describes a 3D surface made of vertices connected by faces
-        /// </summary>
         List<Vec3> vertices;
         List<int[]> faces;
         private List<Color> vertexColors;
@@ -30,6 +27,13 @@ namespace Mola
         public List<int[]> Faces { get => faces; set => faces = value; }
         public List<Vec3> Vertices { get => vertices; set => vertices = value; }
         public List<Color> Colors { get => vertexColors; set => vertexColors = value; }
+        /// <summary>
+        /// Create a MolaMesh
+        /// </summary>
+        /// ### Example
+        /// ~~~~~~~~~~~~~~.cs
+        /// MolaMesh mesh = New MolaMesh();
+        /// ~~~~~~~~~~~~~~
         public MolaMesh()
         {
             this.vertices = new List<Vec3>();
@@ -521,9 +525,6 @@ namespace Mola
             }
             return indices;
         }
-        /// <summary>
-        /// Update the topology of a MolaMesh
-        /// </summary>
         public void UpdateTopology()
         {
             // TODO Auto-generated method stub
@@ -547,9 +548,6 @@ namespace Mola
                 }
             }
         }
-        /// <summary>
-        /// Merge all overlapping vertices 
-        /// </summary>
         public void WeldVertices()
         {
             List<Vec3> welded_vertices = new List<Vec3>();
@@ -1106,11 +1104,6 @@ namespace Mola
         {
             return UtilsFace.FaceCenter(FaceVertices(faceIndex));
         }
-        /// <summary>
-        /// Returns the altitude, 0 if the face is vertical, -Pi/2 if it faces downwards, +Pi/2 if it faces upwards.
-        /// </summary>
-        /// <param name="face_vertices"></param>
-        /// <returns></returns>
         public float FaceAngleVertical(int faceIndex)
         {
             return UtilsFace.FaceAngleVertical(FaceVertices(faceIndex));

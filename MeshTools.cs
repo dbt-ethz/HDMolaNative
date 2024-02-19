@@ -6,7 +6,10 @@ using System.Collections.ObjectModel;
 
 namespace Mola
 {
-    class MeshUtils
+    /// <summary>
+    /// Tools to edit MolaMesh
+    /// </summary>
+    public class MeshTools
     {
         /// <summary>
         /// Creates an offset of a mesh.
@@ -86,6 +89,12 @@ namespace Mola
             }
             return mesh;
         }
+        /// <summary>
+        /// Divide a MolaMesh into 2 based on the boolean mask
+        /// </summary>
+        /// <param name="molaMesh">A MolaMesh</param>
+        /// <param name="mask">A boolean array</param>
+        /// <returns>A list of two MolaMesh</returns>
         public static List<MolaMesh> Split(MolaMesh molaMesh, bool[] mask)
         {
             if(mask.Length != molaMesh.FacesCount())
@@ -98,12 +107,23 @@ namespace Mola
 
             return new List<MolaMesh> { m1, m2 };
         }
+        /// <summary>
+        /// Divide a MolaMesh into 2 based on the boolean mask
+        /// </summary>
+        /// <param name="molaMesh">A MolaMesh</param>
+        /// <param name="mask">A boolean array</param>
+        /// <returns>A list of two molaMesh</returns>
         public static List<MolaMesh> Split(MolaMesh molaMesh, List<bool> mask)
         {
             bool[] maskArray = mask.ToArray();
 
             return Split(molaMesh, maskArray);
         }
+        /// <summary>
+        /// Merge a list of MolaMesh into one
+        /// </summary>
+        /// <param name="molaMeshes">A list of MolaMesh</param>
+        /// <returns>The result MolaMesh</returns>
         public static MolaMesh Merge(List<MolaMesh> molaMeshes)
         {
             MolaMesh molaMesh = new MolaMesh();
@@ -113,6 +133,13 @@ namespace Mola
             }
             return molaMesh;
         }
+        /// <summary>
+        /// Color each face of a MolaMesh with a list of float values.
+        /// The list length must match the face count.
+        /// </summary>
+        /// <param name="molaMesh">A MolaMesh</param>
+        /// <param name="values">A list of float values</param>
+        /// <returns>The result MolaMesh</returns>
         public static MolaMesh Color(MolaMesh molaMesh, List<float> values)
         {
             if (values.Count != molaMesh.FacesCount())
@@ -122,6 +149,12 @@ namespace Mola
             UtilsFace.ColorFaceByValue(molaMesh, values);
             return molaMesh;
         }
+        /// <summary>
+        /// Color all faces of a MolaMesh 
+        /// </summary>
+        /// <param name="molaMesh">A MolaMesh</param>
+        /// <param name="color">System.Drawing.Color</param>
+        /// <returns>The result MolaMesh</returns>
         public static MolaMesh Color(MolaMesh molaMesh, System.Drawing.Color color)
         {
             Color mColor = new Color((float)color.R / 255, (float)color.G / 255, (float)color.B / 255, (float)color.A / 255);
@@ -129,20 +162,38 @@ namespace Mola
             return molaMesh;
         }
         /// <summary>
-        /// 
+        /// Get a boolean array from a float value list
+        /// based on the input filter condition
         /// </summary>
-        /// <param name="values"></param>
-        /// <param name="filter"></param>
-        /// <returns></returns>
-        /// <example>
+        /// <param name="values">A float list</param>
+        /// <param name="filter">A Predicate</param>
+        /// <returns>A boolean Array</returns>
+        /// ### Example
+        /// ~~~~~~~~~~~~.cs
         /// MolaMesh molaMesh = MeshFactory.CreateSphere();
         /// List<float> faceArea = MeshAnalysis.FaceArea(molaMesh);
         /// Predicate<float> filter = a => a > 1;
         /// bool[] mask = MeshUtils.FaceMask(faceArea, filter);
-        /// </example>
+        /// ~~~~~~~~~~~~
         public static bool[] FaceMask(List<float> values, Predicate<float> filter)
         {
             return values.Select(a => filter(a)).ToArray();
+        }
+        /// <summary>
+        /// Update the topology of a MolaMesh
+        /// </summary>
+        /// /// <param name="molaMesh">A MolaMesh</param>
+        public static void UpdateTopology(MolaMesh molaMesh)
+        {
+            molaMesh.UpdateTopology();
+        }
+        /// <summary>
+        /// Weld overlapping vertices of a MolaMesh
+        /// </summary>
+        /// <param name="molaMesh">A MolaMesh</param>
+        public static void WeldVertices(MolaMesh molaMesh)
+        {
+            molaMesh.WeldVertices();
         }
     }
 }

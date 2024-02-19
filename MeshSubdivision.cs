@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace Mola
 {
+    /// <summary>
+    /// A collection of methods to applay subdivision rules to a MolaMesh
+    /// </summary>
     public class MeshSubdivision
     {
         /// <summary>

@@ -18,5 +18,3 @@ C:\D\GitHub\HDMolaNative\obj\Debug\netstandard2.1\HDMola.pdb
 C:\D\GitHub\HDMolaNative\bin\Debug\netstandard2.1\HDMola.deps.json
 C:\D\GitHub\HDMolaNative\bin\Debug\netstandard2.1\HDMola.dll
 C:\D\GitHub\HDMolaNative\bin\Debug\netstandard2.1\HDMola.pdb
-C:\D\GitHub\HDMolaNative\bin\Debug\netstandard2.1\App.config
-C:\D\GitHub\HDMolaNative\bin\Debug\netstandard2.1\HDMola.dll.config

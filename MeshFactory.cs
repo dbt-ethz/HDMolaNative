@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace Mola
 {
+	/// <summary>
+	/// A collection of methods to create MolaMEsh Premitives
+	/// </summary>
 	public class MeshFactory
 	{
 		public static void AddQuad(MolaMesh mesh, float x1, float y1, float z1, float x2, float y2, float z2, float x3, float y3, float z3, float x4, float y4, float z4, Color color, bool flip = false)

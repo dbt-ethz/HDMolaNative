@@ -10,6 +10,16 @@ namespace Mola
     /// </summary>
     public class MolaGrid<T> : IEnumerable
     {
+        /// <summary>
+        /// Create a MolaGrid
+        /// </summary>
+        /// <param name="nX">X dimention</param>
+        /// <param name="nY">Y dimention</param>
+        /// <param name="nZ">Z dimention</param>
+        /// ### Example
+        /// ~~~~~~~~~~~~~~~~~~~~~~.cs
+        /// MolaGrid grid = new MolaGrid(10, 10, 10);
+        /// ~~~~~~~~~~~~~~~~~~~~~~
         public MolaGrid(int nX, int nY, int nZ)
         {
             this.NX = nX;
@@ -28,69 +38,48 @@ namespace Mola
             get { return GetValue(x, y, z); }
             set { SetValue(x, y, z, value); }
         }
-
         private int nX;
         private int nY;
         private int nZ;
         public int nYZ;
-
         IList<T> values;
-
         public int Count => Values.Count;
-
         public int NX { get => nX; set => nX = value; }
         public int NY { get => nY; set => nY = value; }
         public int NZ { get => nZ; set => nZ = value; }
         public IList<T> Values { get => values; set => values = value; }
-
         public T GetValue(int x, int y, int z)
         {
             return Values[GetIndex(x, y, z)];
         }
-
         public int GetIndex(int x, int y, int z)
         {
             return x * nYZ + y * NZ + z;
         }
-
         public void SetValue(int x, int y, int z, T value)
         {
             Values[GetIndex(x, y, z)] = value;
         }
-
-
         public int getX(int index)
         {
             return index / nYZ;
         }
-
-        /**
-         * @param index
-         * @return
-         */
         public int getY(int index)
         {
             return (index / NZ) % NY;
         }
-        /**
-         * @param index
-         * @return
-         */
         public int getZ(int index)
         {
             return index % NZ;
         }
-
         public IEnumerator GetEnumerator()
         {
             return Values.GetEnumerator();
         }
-
         public void CopyTo(Array array, int index)
         {
             Values.CopyTo((T[])array, index);
         }
-
         public int[][] GetNbs(int[][] kernel)
         {
             int[][] nbs = new int[Count][];
