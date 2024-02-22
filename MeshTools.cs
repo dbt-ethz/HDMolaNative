@@ -182,18 +182,22 @@ namespace Mola
         /// <summary>
         /// Update the topology of a MolaMesh
         /// </summary>
-        /// /// <param name="molaMesh">A MolaMesh</param>
-        public static void UpdateTopology(MolaMesh molaMesh)
+        /// <param name="molaMesh">A MolaMesh</param>
+        /// <returns>A boolean Array</returns>
+        public static MolaMesh UpdateTopology(MolaMesh molaMesh)
         {
             molaMesh.UpdateTopology();
+            return molaMesh;
         }
         /// <summary>
         /// Weld overlapping vertices of a MolaMesh
         /// </summary>
         /// <param name="molaMesh">A MolaMesh</param>
-        public static void WeldVertices(MolaMesh molaMesh)
+        /// <returns>A boolean Array</returns>
+        public static MolaMesh WeldVertices(MolaMesh molaMesh)
         {
             molaMesh.WeldVertices();
+            return molaMesh;
         }
     }
 }

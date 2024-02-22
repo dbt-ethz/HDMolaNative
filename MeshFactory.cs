@@ -506,7 +506,7 @@ namespace Mola
 		/// <param name="z2"></param>
 		/// <param name="color"></param>
 		/// <returns></returns>
-		public static MolaMesh CreateBox(float x1, float y1, float z1, float x2, float y2, float z2, Color? color = null)
+		public static MolaMesh CreateBox(float x1 = 0, float y1 = 0, float z1 = 0, float x2 = 1, float y2 = 1, float z2 = 1, Color? color = null)
 		{
 
 			MolaMesh mesh = new MolaMesh();
