@@ -14,6 +14,7 @@ namespace Mola
         /// </summary>
         /// <param name="mesh">A MolaMesh</param>
         /// <returns>The result MolaMesh</returns>
+        /// ![](catmullclark.png)
         public static MolaMesh CatmullClark(MolaMesh mesh)
         {
             return SubdivisionCatmull.Subdivide(mesh);
@@ -25,6 +26,7 @@ namespace Mola
         /// <param name="height">Extruding height</param>
         /// <param name="capTop">Wether to cap the top or not</param>
         /// <returns>The result MolaMesh</returns>
+        /// ![](extrude.png)
         public static MolaMesh Extrude(MolaMesh molaMesh, float height, bool capTop=true)
         {
             MolaMesh newMesh = new();
@@ -45,6 +47,7 @@ namespace Mola
         /// <param name="height">A list Extruding height</param>
         /// <param name="capTop">A list of bool to decide Wether to cap the top or not</param>
         /// <returns>The result MolaMesh</returns>
+        /// ![](extrude.png)
         public static MolaMesh Extrude(MolaMesh molaMesh, List<float> heights, List<bool> capTops)
         {
             if(heights.Count != molaMesh.FacesCount() || capTops.Count != molaMesh.FacesCount())
@@ -66,6 +69,7 @@ namespace Mola
         /// <param name="nU">Division count on U direction</param>
         /// <param name="nV">Devision count on V direction</param>
         /// <returns>The result MolaMesh</returns>
+        /// ![](grid.png)
         public static MolaMesh Grid(MolaMesh molaMesh, int nU, int nV)
         {
             MolaMesh newMesh = new MolaMesh();
@@ -87,6 +91,7 @@ namespace Mola
         /// <param name="nV">A list of int V</param>/// <param name="nU">Division count on U direction</param>
         /// <param name="nV">Devision count on V direction</param>
         /// <returns>The result MolaMesh</returns>
+        /// ![](grid.png)
         public static MolaMesh Grid(MolaMesh molaMesh, List<int> nUList, List<int> nVList)
         {
             if (nUList.Count != molaMesh.FacesCount() || nVList.Count != molaMesh.FacesCount())
@@ -111,6 +116,7 @@ namespace Mola
         /// <param name="minSplit2">min relative parameter on the second direction</param>
         /// <param name="maxSplit2">max relative parameter on the second direction</param>
         /// <returns>The result MolaMesh</returns>
+        /// ![](relative.png)
         public static MolaMesh Relative(MolaMesh mesh, int startSplit, float minSplit1, float maxSplit1, float minSplit2, float maxSplit2)
         {
             MolaMesh newMesh = mesh.CopyVertices();
@@ -213,6 +219,7 @@ namespace Mola
         /// <param name="maxSplitWidth"></param>
         /// <param name="dir"></param>
         /// <returns></returns>
+        /// ![](linearsplitborder.png)
         public static MolaMesh LinearSplitQuad(MolaMesh molaMesh, float minSplitWidth = 0f, float maxSplitWidth = 0.5f, int dir = 0)
         {
             MolaMesh newMesh = new();
@@ -234,6 +241,7 @@ namespace Mola
         /// <param name="maxSplitWidth"></param>
         /// <param name="dir"></param>
         /// <returns></returns>
+        /// ![](linearsplitborder.png)
         public static MolaMesh LinearSplitQuad(MolaMesh molaMesh, float maxSplitWidth = 1f, int dir = 0)
         {
             //if (meshCenter = new MolaMesh();
@@ -261,6 +269,7 @@ namespace Mola
         /// <param name="fraction">A relative value</param>
         /// <param name="capTop">A bool to decide Wether to cap the top or not</param>
         /// <returns>The result MolaMesh</returns>
+        /// ![](extrudetapered.png)
         public static MolaMesh ExtrudeTapered(MolaMesh molaMesh, float height, float fraction, bool capTop)
         {
             MolaMesh newMesh = new MolaMesh();
@@ -284,6 +293,7 @@ namespace Mola
         /// <param name="fractions">A list of relative values</param>
         /// <param name="capTops">A list of bool to decide Wether to cap the top or not</param>
         /// <returns>The result MolaMesh</returns>
+        /// ![](extrudetapered.png)
         public static MolaMesh ExtrudeTapered(MolaMesh molaMesh, List<float> heights, List<float> fractions, List<bool> capTops)
         {
             if (heights.Count != molaMesh.FacesCount() || capTops.Count != molaMesh.FacesCount())
@@ -307,6 +317,7 @@ namespace Mola
         /// <param name="molaMesh">A MolaMesh</param>
         /// <param name="height">Extruding height</param>
         /// <returns>The result MolaMesh</returns>
+        /// ![](roof.png)
         public static MolaMesh SplitRoof(MolaMesh molaMesh, float height = 0f)
         {
             MolaMesh newMesh = new();
@@ -327,6 +338,7 @@ namespace Mola
         /// <param name="molaMesh">A MolaMesh</param>
         /// <param name="heightList">The list of extruding height</param>
         /// <returns>The result MolaMesh</returns>
+        /// ![](roof.png)
         public static MolaMesh SplitRoof(MolaMesh molaMesh, List<float> heightList)
         {
             if (heightList.Count != molaMesh.FacesCount())
@@ -349,6 +361,7 @@ namespace Mola
         /// <param name="molaMesh">The MolaMesh</param>
         /// <param name="height">Extruding height</param>
         /// <returns>The result MolaMesh</returns>
+        /// ![](extrudecenter.png)
         public static MolaMesh ExtrudeToPointCenter(MolaMesh molaMesh, float height = 0f)
         {
             MolaMesh newMesh = new();
@@ -370,6 +383,7 @@ namespace Mola
         /// <param name="molaMesh">The MolaMesh</param>
         /// <param name="heightList">A list of extruding height</param>
         /// <returns>The result MolaMesh</returns>
+        /// ![](extrudecenter.png)
         public static MolaMesh ExtrudeToPointCenter(MolaMesh molaMesh, List<float> heightList)
         {
             if (heightList.Count != molaMesh.FacesCount())
@@ -391,6 +405,7 @@ namespace Mola
         /// <param name="molaMesh">The MolaMesh</param>
         /// <param name="w">The relative value</param>
         /// <returns>The result MolaMesh</returns>
+        /// ![](splitframe.png)
         public static MolaMesh SplitFrame(MolaMesh molaMesh, float w)
         {
             MolaMesh newMesh = new();
@@ -411,6 +426,7 @@ namespace Mola
         /// <param name="molaMesh">The MolaMesh</param>
         /// <param name="wList">A list of relative value</param>
         /// <returns>The result MolaMesh</returns>
+        /// ![](splitframe.png)
         public static MolaMesh SplitFrame(MolaMesh molaMesh, List<float> wList)
         {
             if (wList.Count != molaMesh.FacesCount())
@@ -432,6 +448,7 @@ namespace Mola
         /// <param name="molaMesh">A MolaMesh</param>
         /// <param name="offset">The offset distance</param>
         /// <returns>The result MolaMesh</returns>
+        /// ![](offset.png)
         public static MolaMesh SplitOffset(MolaMesh molaMesh, float offset)
         {
             MolaMesh newMesh = new();
@@ -449,6 +466,7 @@ namespace Mola
         /// <param name="molaMesh">A MolaMesh</param>
         /// <param name="offsetList">A list of offset distance</param>
         /// <returns></returns>
+        /// ![](offset.png)
         public static MolaMesh SplitOffset(MolaMesh molaMesh, IList<float> offsetList)
         {
             MolaMesh newMesh = new MolaMesh();
@@ -466,6 +484,7 @@ namespace Mola
         /// <param name="x">Size on U direction</param>
         /// <param name="y">Size on V direction</param>
         /// <returns>The result MolaMesh</returns>
+        /// ![](gridabs.png)
         public static MolaMesh GridAbs(MolaMesh molaMesh, float x, float y)
         {
             MolaMesh newMesh = new MolaMesh();
@@ -483,6 +502,7 @@ namespace Mola
         /// <param name="x">A list of size on U direction</param>
         /// <param name="y">A list of size on V direction</param>
         /// <returns>The result MolaMesh</returns>
+        /// ![](gridabs.png)
         public static MolaMesh GridAbs(MolaMesh molaMesh, List<float> xList, List<float> yList)
         {
             MolaMesh newMesh = new MolaMesh();

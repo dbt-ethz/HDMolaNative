@@ -102,39 +102,39 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a602e16bee4859442d4a7859514cf79b2" id="r_a602e16bee4859442d4a7859514cf79b2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a602e16bee4859442d4a7859514cf79b2">Extrude</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, List&lt; float &gt; heights, List&lt; bool &gt; capTops)</td></tr>
 <tr class="memdesc:a602e16bee4859442d4a7859514cf79b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrudes the all faces in a MolaMesh straight by a list distance height.  <br /></td></tr>
 <tr class="separator:a602e16bee4859442d4a7859514cf79b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3589dbf48f24a3e7836b5c2d7eed2765" id="r_a3589dbf48f24a3e7836b5c2d7eed2765"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3589dbf48f24a3e7836b5c2d7eed2765">Grid</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, int nU, int nV)</td></tr>
-<tr class="memdesc:a3589dbf48f24a3e7836b5c2d7eed2765"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits all triangle or quad faces in a MolaMesh into regular grids.  <br /></td></tr>
-<tr class="separator:a3589dbf48f24a3e7836b5c2d7eed2765"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a46d43c168d6f074990499d5846a094" id="r_a7a46d43c168d6f074990499d5846a094"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a46d43c168d6f074990499d5846a094">Grid</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, List&lt; int &gt; nUList, List&lt; int &gt; nVList)</td></tr>
-<tr class="memdesc:a7a46d43c168d6f074990499d5846a094"><td class="mdescLeft">&#160;</td><td class="mdescRight">splits all triangle or quad faces in a MolaMesh into regular grids  <br /></td></tr>
-<tr class="separator:a7a46d43c168d6f074990499d5846a094"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ecfb74fc8889544c4d87b3acc3a97b0" id="r_a4ecfb74fc8889544c4d87b3acc3a97b0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ecfb74fc8889544c4d87b3acc3a97b0">Relative</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> mesh, int startSplit, float minSplit1, float maxSplit1, float minSplit2, float maxSplit2)</td></tr>
-<tr class="memdesc:a4ecfb74fc8889544c4d87b3acc3a97b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split all faces in a MolaMesh based on relative parameters.  <br /></td></tr>
-<tr class="separator:a4ecfb74fc8889544c4d87b3acc3a97b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab09c8e1794b4132abcc8f9e24406dd9f" id="r_ab09c8e1794b4132abcc8f9e24406dd9f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab09c8e1794b4132abcc8f9e24406dd9f">LinearSplitQuad</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, float minSplitWidth=0f, float maxSplitWidth=0.5f, int dir=0)</td></tr>
-<tr class="memdesc:ab09c8e1794b4132abcc8f9e24406dd9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrudes all face in a MolaMesh tapered like a window by creating an offset face and quads between every original edge and the corresponding new edge.  <br /></td></tr>
-<tr class="separator:ab09c8e1794b4132abcc8f9e24406dd9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4074f0fe773a31fedc8860744a55589e" id="r_a4074f0fe773a31fedc8860744a55589e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4074f0fe773a31fedc8860744a55589e">LinearSplitQuad</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, float maxSplitWidth=1f, int dir=0)</td></tr>
-<tr class="memdesc:a4074f0fe773a31fedc8860744a55589e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split each face in a quad MolaMesh into three quads in one direction by specifying the max width of the segments.  <br /></td></tr>
-<tr class="separator:a4074f0fe773a31fedc8860744a55589e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01eba07f22ef9487188a6910bd15fd5b" id="r_a01eba07f22ef9487188a6910bd15fd5b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01eba07f22ef9487188a6910bd15fd5b">ExtrudeTapered</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, float height, float fraction, bool capTop)</td></tr>
 <tr class="memdesc:a01eba07f22ef9487188a6910bd15fd5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrudes all face in a MolaMesh tapered like a window by creating an offset face and quads between every original edge and the corresponding new edge.  <br /></td></tr>
 <tr class="separator:a01eba07f22ef9487188a6910bd15fd5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60fbf79a4203aa05321da53e89f367fc" id="r_a60fbf79a4203aa05321da53e89f367fc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60fbf79a4203aa05321da53e89f367fc">ExtrudeTapered</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, List&lt; float &gt; heights, List&lt; float &gt; fractions, List&lt; bool &gt; capTops)</td></tr>
 <tr class="memdesc:a60fbf79a4203aa05321da53e89f367fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrudes all face in a MolaMesh tapered like a window by creating an offset face and quads between every original edge and the corresponding new edge.  <br /></td></tr>
 <tr class="separator:a60fbf79a4203aa05321da53e89f367fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a685f10c9f9d6743933bfd1bbed8583b5" id="r_a685f10c9f9d6743933bfd1bbed8583b5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a685f10c9f9d6743933bfd1bbed8583b5">SplitRoof</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, float height=0f)</td></tr>
-<tr class="memdesc:a685f10c9f9d6743933bfd1bbed8583b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrudes all faces in a MolaMesh into pitched rooves.  <br /></td></tr>
-<tr class="separator:a685f10c9f9d6743933bfd1bbed8583b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5135b29ccd36c77ae5bcef64669731f" id="r_ad5135b29ccd36c77ae5bcef64669731f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5135b29ccd36c77ae5bcef64669731f">SplitRoof</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, List&lt; float &gt; heightList)</td></tr>
-<tr class="memdesc:ad5135b29ccd36c77ae5bcef64669731f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrude each face in a MolaMesh into pitched rooves by specifying individual extrusion heights for each face.  <br /></td></tr>
-<tr class="separator:ad5135b29ccd36c77ae5bcef64669731f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab03fe6002a5226c66364ef177f75269d" id="r_ab03fe6002a5226c66364ef177f75269d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab03fe6002a5226c66364ef177f75269d">ExtrudeToPointCenter</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, float height=0f)</td></tr>
 <tr class="memdesc:ab03fe6002a5226c66364ef177f75269d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrude each face in a MolaMesh to a new point offset from its center by a distance along the normal vector of the face and create triangular faces from each edge to the point.  <br /></td></tr>
 <tr class="separator:ab03fe6002a5226c66364ef177f75269d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81ebd54cc0eed11a91377ac2017581bd" id="r_a81ebd54cc0eed11a91377ac2017581bd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81ebd54cc0eed11a91377ac2017581bd">ExtrudeToPointCenter</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, List&lt; float &gt; heightList)</td></tr>
 <tr class="memdesc:a81ebd54cc0eed11a91377ac2017581bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrudes each face in a MolaMesh to the center point moved by height normal to the face and creating a triangular face from each edge to the point.  <br /></td></tr>
 <tr class="separator:a81ebd54cc0eed11a91377ac2017581bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3589dbf48f24a3e7836b5c2d7eed2765" id="r_a3589dbf48f24a3e7836b5c2d7eed2765"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3589dbf48f24a3e7836b5c2d7eed2765">Grid</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, int nU, int nV)</td></tr>
+<tr class="memdesc:a3589dbf48f24a3e7836b5c2d7eed2765"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits all triangle or quad faces in a MolaMesh into regular grids.  <br /></td></tr>
+<tr class="separator:a3589dbf48f24a3e7836b5c2d7eed2765"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a46d43c168d6f074990499d5846a094" id="r_a7a46d43c168d6f074990499d5846a094"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a46d43c168d6f074990499d5846a094">Grid</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, List&lt; int &gt; nUList, List&lt; int &gt; nVList)</td></tr>
+<tr class="memdesc:a7a46d43c168d6f074990499d5846a094"><td class="mdescLeft">&#160;</td><td class="mdescRight">splits all triangle or quad faces in a MolaMesh into regular grids  <br /></td></tr>
+<tr class="separator:a7a46d43c168d6f074990499d5846a094"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a368de86d5af8e03354ebec1a3c915a68" id="r_a368de86d5af8e03354ebec1a3c915a68"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a368de86d5af8e03354ebec1a3c915a68">GridAbs</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, float x, float y)</td></tr>
+<tr class="memdesc:a368de86d5af8e03354ebec1a3c915a68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subidivide each face in a MolaMesh into cells with absolute size.  <br /></td></tr>
+<tr class="separator:a368de86d5af8e03354ebec1a3c915a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af53a8c0972fc386e4f672448e4481d4d" id="r_af53a8c0972fc386e4f672448e4481d4d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af53a8c0972fc386e4f672448e4481d4d">GridAbs</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, List&lt; float &gt; xList, List&lt; float &gt; yList)</td></tr>
+<tr class="memdesc:af53a8c0972fc386e4f672448e4481d4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subidivide each face in a MolaMesh into cells with absolute size.  <br /></td></tr>
+<tr class="separator:af53a8c0972fc386e4f672448e4481d4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4074f0fe773a31fedc8860744a55589e" id="r_a4074f0fe773a31fedc8860744a55589e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4074f0fe773a31fedc8860744a55589e">LinearSplitQuad</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, float maxSplitWidth=1f, int dir=0)</td></tr>
+<tr class="memdesc:a4074f0fe773a31fedc8860744a55589e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split each face in a quad MolaMesh into three quads in one direction by specifying the max width of the segments.  <br /></td></tr>
+<tr class="separator:a4074f0fe773a31fedc8860744a55589e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab09c8e1794b4132abcc8f9e24406dd9f" id="r_ab09c8e1794b4132abcc8f9e24406dd9f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab09c8e1794b4132abcc8f9e24406dd9f">LinearSplitQuad</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, float minSplitWidth=0f, float maxSplitWidth=0.5f, int dir=0)</td></tr>
+<tr class="memdesc:ab09c8e1794b4132abcc8f9e24406dd9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrudes all face in a MolaMesh tapered like a window by creating an offset face and quads between every original edge and the corresponding new edge.  <br /></td></tr>
+<tr class="separator:ab09c8e1794b4132abcc8f9e24406dd9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ecfb74fc8889544c4d87b3acc3a97b0" id="r_a4ecfb74fc8889544c4d87b3acc3a97b0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ecfb74fc8889544c4d87b3acc3a97b0">Relative</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> mesh, int startSplit, float minSplit1, float maxSplit1, float minSplit2, float maxSplit2)</td></tr>
+<tr class="memdesc:a4ecfb74fc8889544c4d87b3acc3a97b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split all faces in a MolaMesh based on relative parameters.  <br /></td></tr>
+<tr class="separator:a4ecfb74fc8889544c4d87b3acc3a97b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0406ab96f93a96dd007332274cbeaaf8" id="r_a0406ab96f93a96dd007332274cbeaaf8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0406ab96f93a96dd007332274cbeaaf8">SplitFrame</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, float w)</td></tr>
 <tr class="memdesc:a0406ab96f93a96dd007332274cbeaaf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an offset frame with quad corners from each face in a Molamesh.  <br /></td></tr>
 <tr class="separator:a0406ab96f93a96dd007332274cbeaaf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,12 +147,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a5084953ce55030cfa049d458e741a58c" id="r_a5084953ce55030cfa049d458e741a58c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5084953ce55030cfa049d458e741a58c">SplitOffset</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, IList&lt; float &gt; offsetList)</td></tr>
 <tr class="memdesc:a5084953ce55030cfa049d458e741a58c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset each face in a MolaMesh by specifying individual distances for each face.  <br /></td></tr>
 <tr class="separator:a5084953ce55030cfa049d458e741a58c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a368de86d5af8e03354ebec1a3c915a68" id="r_a368de86d5af8e03354ebec1a3c915a68"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a368de86d5af8e03354ebec1a3c915a68">GridAbs</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, float x, float y)</td></tr>
-<tr class="memdesc:a368de86d5af8e03354ebec1a3c915a68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subidivide each face in a MolaMesh into cells with absolute size.  <br /></td></tr>
-<tr class="separator:a368de86d5af8e03354ebec1a3c915a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af53a8c0972fc386e4f672448e4481d4d" id="r_af53a8c0972fc386e4f672448e4481d4d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af53a8c0972fc386e4f672448e4481d4d">GridAbs</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, List&lt; float &gt; xList, List&lt; float &gt; yList)</td></tr>
-<tr class="memdesc:af53a8c0972fc386e4f672448e4481d4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subidivide each face in a MolaMesh into cells with absolute size.  <br /></td></tr>
-<tr class="separator:af53a8c0972fc386e4f672448e4481d4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a685f10c9f9d6743933bfd1bbed8583b5" id="r_a685f10c9f9d6743933bfd1bbed8583b5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a685f10c9f9d6743933bfd1bbed8583b5">SplitRoof</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, float height=0f)</td></tr>
+<tr class="memdesc:a685f10c9f9d6743933bfd1bbed8583b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrudes all faces in a MolaMesh into pitched rooves.  <br /></td></tr>
+<tr class="separator:a685f10c9f9d6743933bfd1bbed8583b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5135b29ccd36c77ae5bcef64669731f" id="r_ad5135b29ccd36c77ae5bcef64669731f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5135b29ccd36c77ae5bcef64669731f">SplitRoof</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, List&lt; float &gt; heightList)</td></tr>
+<tr class="memdesc:ad5135b29ccd36c77ae5bcef64669731f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrude each face in a MolaMesh into pitched rooves by specifying individual extrusion heights for each face.  <br /></td></tr>
+<tr class="separator:ad5135b29ccd36c77ae5bcef64669731f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A collection of methods to applay subdivision rules to a MolaMesh. </p>
@@ -188,6 +188,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result MolaMesh</dd></dl>
+<p><img src="catmullclark.png" alt="" class="inline"/>     </p>
 
 </div>
 </div>
@@ -233,6 +234,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result MolaMesh</dd></dl>
+<p><img src="extrude.png" alt="" class="inline"/>     </p>
 
 </div>
 </div>
@@ -279,6 +281,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result MolaMesh</dd></dl>
+<p><img src="extrude.png" alt="" class="inline"/>     </p>
 
 </div>
 </div>
@@ -330,6 +333,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result MolaMesh</dd></dl>
+<p><img src="extrudetapered.png" alt="" class="inline"/>     </p>
 
 </div>
 </div>
@@ -381,6 +385,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result MolaMesh</dd></dl>
+<p><img src="extrudetapered.png" alt="" class="inline"/>     </p>
 
 </div>
 </div>
@@ -420,6 +425,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result MolaMesh</dd></dl>
+<p><img src="extrudecenter.png" alt="" class="inline"/>     </p>
 
 </div>
 </div>
@@ -459,6 +465,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result MolaMesh</dd></dl>
+<p><img src="extrudecenter.png" alt="" class="inline"/>     </p>
 
 </div>
 </div>
@@ -504,6 +511,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result MolaMesh</dd></dl>
+<p><img src="grid.png" alt="" class="inline"/>     </p>
 
 </div>
 </div>
@@ -556,6 +564,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result MolaMesh</dd></dl>
+<p><img src="grid.png" alt="" class="inline"/>     </p>
 
 </div>
 </div>
@@ -601,6 +610,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result MolaMesh</dd></dl>
+<p><img src="gridabs.png" alt="" class="inline"/>     </p>
 
 </div>
 </div>
@@ -646,6 +656,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result MolaMesh</dd></dl>
+<p><img src="gridabs.png" alt="" class="inline"/>     </p>
 
 </div>
 </div>
@@ -691,6 +702,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p><img src="linearsplitborder.png" alt="" class="inline"/>     </p>
 
 </div>
 </div>
@@ -753,6 +765,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p><img src="linearsplitborder.png" alt="" class="inline"/>     </p>
 
 </div>
 </div>
@@ -816,6 +829,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result MolaMesh</dd></dl>
+<p><img src="relative.png" alt="" class="inline"/>     </p>
 
 </div>
 </div>
@@ -856,6 +870,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result MolaMesh</dd></dl>
+<p><img src="splitframe.png" alt="" class="inline"/>     </p>
 
 </div>
 </div>
@@ -896,6 +911,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result MolaMesh</dd></dl>
+<p><img src="splitframe.png" alt="" class="inline"/>     </p>
 
 </div>
 </div>
@@ -936,6 +952,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result MolaMesh</dd></dl>
+<p><img src="offset.png" alt="" class="inline"/>     </p>
 
 </div>
 </div>
@@ -976,6 +993,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p><img src="offset.png" alt="" class="inline"/>     </p>
 
 </div>
 </div>
@@ -1015,6 +1033,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result MolaMesh</dd></dl>
+<p><img src="roof.png" alt="" class="inline"/>     </p>
 
 </div>
 </div>
@@ -1054,6 +1073,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result MolaMesh</dd></dl>
+<p><img src="roof.png" alt="" class="inline"/>     </p>
 
 </div>
 </div>

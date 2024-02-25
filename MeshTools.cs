@@ -21,11 +21,13 @@ namespace Mola
         /// <param name="closeborders">Wether to close the borders or not</param>
         /// <param name="constrainZ"></param>
         /// <returns>The result MolaMesh</returns>
+        /// ![](offsetface.png)
         public static MolaMesh Offset(MolaMesh mesh, float offset, bool closeborders = true, bool constrainZ = false)
         {
             // calculate normals per vertex
             // create new vertices and duplicate faces
             // close borders
+            mesh = mesh.Copy(); // do not change original mesh
             if (closeborders) mesh.WeldVertices();
 
             int nFaces = mesh.Faces.Count;

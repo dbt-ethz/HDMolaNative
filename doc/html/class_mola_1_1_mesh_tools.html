@@ -93,18 +93,6 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a8dcc33b3cc383341b15807f7ce7d722c" id="r_a8dcc33b3cc383341b15807f7ce7d722c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8dcc33b3cc383341b15807f7ce7d722c">Offset</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> mesh, float offset, bool closeborders=true, bool constrainZ=false)</td></tr>
-<tr class="memdesc:a8dcc33b3cc383341b15807f7ce7d722c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an offset of a mesh.  <br /></td></tr>
-<tr class="separator:a8dcc33b3cc383341b15807f7ce7d722c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89a1f8524f05de642ac276b50a15c927" id="r_a89a1f8524f05de642ac276b50a15c927"><td class="memItemLeft" align="right" valign="top">static List&lt; <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89a1f8524f05de642ac276b50a15c927">Split</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, bool[] mask)</td></tr>
-<tr class="memdesc:a89a1f8524f05de642ac276b50a15c927"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divide a MolaMesh into 2 based on the boolean mask.  <br /></td></tr>
-<tr class="separator:a89a1f8524f05de642ac276b50a15c927"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a292ad2eec7bd6ebadddfc9cf8d7c8592" id="r_a292ad2eec7bd6ebadddfc9cf8d7c8592"><td class="memItemLeft" align="right" valign="top">static List&lt; <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a292ad2eec7bd6ebadddfc9cf8d7c8592">Split</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, List&lt; bool &gt; mask)</td></tr>
-<tr class="memdesc:a292ad2eec7bd6ebadddfc9cf8d7c8592"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divide a MolaMesh into 2 based on the boolean mask.  <br /></td></tr>
-<tr class="separator:a292ad2eec7bd6ebadddfc9cf8d7c8592"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1601dd0440768e9425db8b921dc1bc50" id="r_a1601dd0440768e9425db8b921dc1bc50"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1601dd0440768e9425db8b921dc1bc50">Merge</a> (List&lt; <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> &gt; molaMeshes)</td></tr>
-<tr class="memdesc:a1601dd0440768e9425db8b921dc1bc50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merge a list of MolaMesh into one.  <br /></td></tr>
-<tr class="separator:a1601dd0440768e9425db8b921dc1bc50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81732f32aa8cf23b87314e7dfc3a2784" id="r_a81732f32aa8cf23b87314e7dfc3a2784"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81732f32aa8cf23b87314e7dfc3a2784">Color</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, List&lt; float &gt; values)</td></tr>
 <tr class="memdesc:a81732f32aa8cf23b87314e7dfc3a2784"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color each face of a MolaMesh with a list of float values.  <br /></td></tr>
 <tr class="separator:a81732f32aa8cf23b87314e7dfc3a2784"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -114,12 +102,24 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ab0d6731cef3125e420c5fa6bb66172ae" id="r_ab0d6731cef3125e420c5fa6bb66172ae"><td class="memItemLeft" align="right" valign="top">static bool[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0d6731cef3125e420c5fa6bb66172ae">FaceMask</a> (List&lt; float &gt; values, Predicate&lt; float &gt; filter)</td></tr>
 <tr class="memdesc:ab0d6731cef3125e420c5fa6bb66172ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a boolean array from a float value list based on the input filter condition.  <br /></td></tr>
 <tr class="separator:ab0d6731cef3125e420c5fa6bb66172ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af81362ff3212de99cc479952450ce7d7" id="r_af81362ff3212de99cc479952450ce7d7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af81362ff3212de99cc479952450ce7d7">UpdateTopology</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh)</td></tr>
-<tr class="memdesc:af81362ff3212de99cc479952450ce7d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the topology of a MolaMesh.  <br /></td></tr>
-<tr class="separator:af81362ff3212de99cc479952450ce7d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa03e3b8e8d9aefc5d775a4bddc8f64b9" id="r_aa03e3b8e8d9aefc5d775a4bddc8f64b9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa03e3b8e8d9aefc5d775a4bddc8f64b9">WeldVertices</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh)</td></tr>
-<tr class="memdesc:aa03e3b8e8d9aefc5d775a4bddc8f64b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Weld overlapping vertices of a MolaMesh.  <br /></td></tr>
-<tr class="separator:aa03e3b8e8d9aefc5d775a4bddc8f64b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1601dd0440768e9425db8b921dc1bc50" id="r_a1601dd0440768e9425db8b921dc1bc50"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1601dd0440768e9425db8b921dc1bc50">Merge</a> (List&lt; <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> &gt; molaMeshes)</td></tr>
+<tr class="memdesc:a1601dd0440768e9425db8b921dc1bc50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merge a list of MolaMesh into one.  <br /></td></tr>
+<tr class="separator:a1601dd0440768e9425db8b921dc1bc50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dcc33b3cc383341b15807f7ce7d722c" id="r_a8dcc33b3cc383341b15807f7ce7d722c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8dcc33b3cc383341b15807f7ce7d722c">Offset</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> mesh, float offset, bool closeborders=true, bool constrainZ=false)</td></tr>
+<tr class="memdesc:a8dcc33b3cc383341b15807f7ce7d722c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an offset of a mesh.  <br /></td></tr>
+<tr class="separator:a8dcc33b3cc383341b15807f7ce7d722c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89a1f8524f05de642ac276b50a15c927" id="r_a89a1f8524f05de642ac276b50a15c927"><td class="memItemLeft" align="right" valign="top">static List&lt; <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89a1f8524f05de642ac276b50a15c927">Split</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, bool[] mask)</td></tr>
+<tr class="memdesc:a89a1f8524f05de642ac276b50a15c927"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divide a MolaMesh into 2 based on the boolean mask.  <br /></td></tr>
+<tr class="separator:a89a1f8524f05de642ac276b50a15c927"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a292ad2eec7bd6ebadddfc9cf8d7c8592" id="r_a292ad2eec7bd6ebadddfc9cf8d7c8592"><td class="memItemLeft" align="right" valign="top">static List&lt; <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a292ad2eec7bd6ebadddfc9cf8d7c8592">Split</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, List&lt; bool &gt; mask)</td></tr>
+<tr class="memdesc:a292ad2eec7bd6ebadddfc9cf8d7c8592"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divide a MolaMesh into 2 based on the boolean mask.  <br /></td></tr>
+<tr class="separator:a292ad2eec7bd6ebadddfc9cf8d7c8592"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a882030bf8feb3a971d5a37670e2b748c" id="r_a882030bf8feb3a971d5a37670e2b748c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a882030bf8feb3a971d5a37670e2b748c">UpdateTopology</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh)</td></tr>
+<tr class="memdesc:a882030bf8feb3a971d5a37670e2b748c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the topology of a MolaMesh.  <br /></td></tr>
+<tr class="separator:a882030bf8feb3a971d5a37670e2b748c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5b3350e4608ae757f06b96e1a79435e" id="r_ad5b3350e4608ae757f06b96e1a79435e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5b3350e4608ae757f06b96e1a79435e">WeldVertices</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh)</td></tr>
+<tr class="memdesc:ad5b3350e4608ae757f06b96e1a79435e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Weld overlapping vertices of a MolaMesh.  <br /></td></tr>
+<tr class="separator:ad5b3350e4608ae757f06b96e1a79435e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Tools to edit MolaMesh. </p>
@@ -334,6 +334,7 @@ Example</h3>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result MolaMesh</dd></dl>
+<p><img src="offsetface.png" alt="" class="inline"/>     </p>
 
 </div>
 </div>
@@ -415,8 +416,8 @@ Example</h3>
 
 </div>
 </div>
-<a id="af81362ff3212de99cc479952450ce7d7" name="af81362ff3212de99cc479952450ce7d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af81362ff3212de99cc479952450ce7d7">&#9670;&#160;</a></span>UpdateTopology()</h2>
+<a id="a882030bf8feb3a971d5a37670e2b748c" name="a882030bf8feb3a971d5a37670e2b748c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a882030bf8feb3a971d5a37670e2b748c">&#9670;&#160;</a></span>UpdateTopology()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -425,7 +426,7 @@ Example</h3>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void UpdateTopology </td>
+          <td class="memname">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> UpdateTopology </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a></td>          <td class="paramname"><span class="paramname"><em>molaMesh</em></span></td><td>)</td>
           <td></td>
@@ -439,17 +440,18 @@ Example</h3>
 </div><div class="memdoc">
 
 <p>Update the topology of a MolaMesh. </p>
-<p>/// </p><dl class="params"><dt>Parameters</dt><dd>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">molaMesh</td><td>A MolaMesh</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>A boolean Array</dd></dl>
 
 </div>
 </div>
-<a id="aa03e3b8e8d9aefc5d775a4bddc8f64b9" name="aa03e3b8e8d9aefc5d775a4bddc8f64b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa03e3b8e8d9aefc5d775a4bddc8f64b9">&#9670;&#160;</a></span>WeldVertices()</h2>
+<a id="ad5b3350e4608ae757f06b96e1a79435e" name="ad5b3350e4608ae757f06b96e1a79435e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5b3350e4608ae757f06b96e1a79435e">&#9670;&#160;</a></span>WeldVertices()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -458,7 +460,7 @@ Example</h3>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void WeldVertices </td>
+          <td class="memname">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> WeldVertices </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a></td>          <td class="paramname"><span class="paramname"><em>molaMesh</em></span></td><td>)</td>
           <td></td>
@@ -478,6 +480,7 @@ Example</h3>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>A boolean Array</dd></dl>
 
 </div>
 </div>
