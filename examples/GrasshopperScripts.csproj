@@ -7,15 +7,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GH_IO">
-      <HintPath>/Applications/Rhino 7.app/Contents/Frameworks/RhCore.framework/Versions/Current/Resources/ManagedPlugIns/GrasshopperPlugin.rhp/GH_IO.dll</HintPath>
+      <HintPath>C:\Program Files\Rhino 7\Plug-ins\Grasshopper\GH_IO.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Grasshopper">
-      <HintPath>/Applications/Rhino 7.app/Contents/Frameworks/RhCore.framework/Versions/Current/Resources/ManagedPlugIns/GrasshopperPlugin.rhp/Grasshopper.dll</HintPath>
+      <HintPath>C:\Program Files\Rhino 7\Plug-ins\Grasshopper\Grasshopper.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RhinoCommon">
-      <HintPath>/Applications/Rhino 7.app/Contents/Frameworks/RhCore.framework/Versions/Current/Resources/RhinoCommon.dll</HintPath>
+      <HintPath>C:\Program Files\Rhino 7\System\RhinoCommon.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

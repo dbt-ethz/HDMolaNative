@@ -6,9 +6,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="examples\" />
+    <Compile Remove="examples\**" />
+    <EmbeddedResource Remove="examples\**" />
+    <None Remove="examples\**" />
   </ItemGroup>
+
   <ItemGroup>
-    <Folder Include="examples\" />
+    <Compile Remove="Box-270df.cs" />
+    <Compile Remove="box-3a8da.cs" />
+    <Compile Remove="Boxes-2e894.cs" />
+    <Compile Remove="BoxW-2be77.cs" />
   </ItemGroup>
+
 </Project>

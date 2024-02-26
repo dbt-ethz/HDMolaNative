@@ -16,7 +16,7 @@ using Mola;
 /// <summary>
 /// This class will be instantiated on demand by the Script component.
 /// </summary>
-public abstract class Script_Instance_2e894 : GH_ScriptInstance
+public abstract class Script_Instance_50cd2 : GH_ScriptInstance
 {
   #region Utility functions
   /// <summary>Print a String to the [Out] Parameter of the Script component.</summary>
@@ -53,29 +53,36 @@ public abstract class Script_Instance_2e894 : GH_ScriptInstance
   /// they will have a default value.
   /// </summary>
   #region Runscript
-  private void RunScript(List<Point3d> x, List<Point3d> y, ref object A)
+  private void RunScript(double x, double y, int z, ref object A, ref object B)
   {
-    List<MolaMesh> meshes = new List<MolaMesh>();
-    MolaMesh mesh = new MolaMesh();
-    for (int i = 0; i < x.Count; i++)
-    {
-      float x1 = (float)x[i].X;
-      float y1 = (float)x[i].Y;
-      float z1 = (float)x[i].Z;
-      float x2 = (float)y[i].X;
-      float y2 = (float)y[i].Y;
-      float z2 = (float)y[i].Z;
+        MolaMesh mesh = MeshFactory.CreateCone((float)y, (float)x, 0.5f, 3, z);
+        mesh = MeshSubdivision.Grid(mesh, 2, 5);
+        List<float> values = MeshAnalysis.FaceArea(mesh);
+        bool[] mask = new bool[values.Count];
+        for (int i = 0; i < values.Count; i++)
+        {
+            if (values[i] > 0.7f)
+            {
+                mask[i] = true;
+            }
+        }
 
-      mesh = MeshFactory.CreateBox(x1, y1, z1, x2, y2, z2);
-      meshes.Add(mesh);
+        List<MolaMesh> meshes = MeshTools.Split(mesh, mask);
+        A = meshes[0];
+        B = meshes[1];
+
+
+        MolaMesh meshA = (MolaMesh)x;
+        MolaMesh meshB = (MolaMesh)y;
+        meshA = MeshSubdivision.ExtrudeTapered(meshA, 0.8f, 0.8f, false);
+        meshB = MeshSubdivision.ExtrudeTapered(meshB, -0.5f, 0.6f, true);
+        MolaMesh mesh = MeshTools.Merge(new List<MolaMesh> { meshA, meshB });
+        mesh = MeshTools.WeldVertices(mesh);
+        mesh = MeshTools.UpdateTopology(mesh);
+        mesh = MeshTools.Offset(mesh, 0.2f);
+
+        A = mesh;
     }
-    mesh = MeshTools.Merge(meshes);
-
-    mesh = MeshSubdivision.LinearSplitQuad(mesh, 2, 6);
-    mesh = MeshSubdivision.Grid(mesh, 10, 2);
-    mesh = MeshSubdivision.ExtrudeTapered(mesh, 0, 0.3f, false);
-    A = mesh;
-  }
   #endregion
   #region Additional
 

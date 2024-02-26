@@ -71,9 +71,12 @@ public abstract class Script_Instance_2e894 : GH_ScriptInstance
     }
     mesh = MeshTools.Merge(meshes);
 
-    mesh = MeshSubdivision.LinearSplitQuad(mesh, 2, 6);
-    mesh = MeshSubdivision.Grid(mesh, 10, 2);
-    mesh = MeshSubdivision.ExtrudeTapered(mesh, 0, 0.3f, false);
+    //mesh = MeshSubdivision.LinearSplitQuad(mesh, 2, 6);
+    mesh = MeshSubdivision.Grid(mesh, 10, 10);
+    mesh = MeshSubdivision.ExtrudeTapered(mesh, 10, 0.7f, true);
+    mesh = MeshTools.WeldVertices(mesh);
+    mesh = MeshTools.UpdateTopology(mesh);
+    mesh = MeshSubdivision.CatmullClark(mesh);
     A = mesh;
   }
   #endregion

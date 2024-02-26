@@ -16,7 +16,7 @@ using Mola;
 /// <summary>
 /// This class will be instantiated on demand by the Script component.
 /// </summary>
-public abstract class Script_Instance_4ad9d : GH_ScriptInstance
+public abstract class Script_Instance_270df : GH_ScriptInstance
 {
   #region Utility functions
   /// <summary>Print a String to the [Out] Parameter of the Script component.</summary>
@@ -53,13 +53,16 @@ public abstract class Script_Instance_4ad9d : GH_ScriptInstance
   /// they will have a default value.
   /// </summary>
   #region Runscript
-  private void RunScript(int x, double y, ref object A)
+  private void RunScript(double x, double y, ref object A)
   {
-    MolaMesh mesh = MeshFactory.CreateSphere(1, 0, 0, 0, x, x);
-    mesh = MeshSubdivision.ExtrudeToPointCenter(mesh, (float)y);
-    mesh = MeshTools.WeldVertices(mesh);
-    mesh = MeshTools.UpdateTopology(mesh);
-    mesh = MeshSubdivision.CatmullClark(mesh);
+    MolaMesh mesh = MeshFactory.CreateBox();
+    //mesh = MeshSubdivision.Extrude(mesh, 0.2f);
+    mesh = MeshSubdivision.Extrude(mesh, (float)x);
+    mesh = MeshSubdivision.Extrude(mesh, (float)x);
+
+    mesh = MeshSubdivision.ExtrudeTapered(mesh, 0, (float)y, false);
+    mesh = MeshTools.Offset(mesh, 0.2f);
+
     A = mesh;
   }
   #endregion

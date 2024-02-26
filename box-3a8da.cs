@@ -10,13 +10,12 @@ using Grasshopper.Kernel;
 using Grasshopper.Kernel.Data;
 using Grasshopper.Kernel.Types;
 
-using Mola;
 
 
 /// <summary>
 /// This class will be instantiated on demand by the Script component.
 /// </summary>
-public abstract class Script_Instance_2e894 : GH_ScriptInstance
+public abstract class Script_Instance_3a8da : GH_ScriptInstance
 {
   #region Utility functions
   /// <summary>Print a String to the [Out] Parameter of the Script component.</summary>
@@ -53,28 +52,9 @@ public abstract class Script_Instance_2e894 : GH_ScriptInstance
   /// they will have a default value.
   /// </summary>
   #region Runscript
-  private void RunScript(List<Point3d> x, List<Point3d> y, ref object A)
+  private void RunScript(object x, object y, ref object A)
   {
-    List<MolaMesh> meshes = new List<MolaMesh>();
-    MolaMesh mesh = new MolaMesh();
-    for (int i = 0; i < x.Count; i++)
-    {
-      float x1 = (float)x[i].X;
-      float y1 = (float)x[i].Y;
-      float z1 = (float)x[i].Z;
-      float x2 = (float)y[i].X;
-      float y2 = (float)y[i].Y;
-      float z2 = (float)y[i].Z;
 
-      mesh = MeshFactory.CreateBox(x1, y1, z1, x2, y2, z2);
-      meshes.Add(mesh);
-    }
-    mesh = MeshTools.Merge(meshes);
-
-    mesh = MeshSubdivision.LinearSplitQuad(mesh, 2, 6);
-    mesh = MeshSubdivision.Grid(mesh, 10, 2);
-    mesh = MeshSubdivision.ExtrudeTapered(mesh, 0, 0.3f, false);
-    A = mesh;
   }
   #endregion
   #region Additional

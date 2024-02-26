@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Mola
 {
-    class MeshAnalysis
+    public class MeshAnalysis
     {
         public static List<float> FaceArea(MolaMesh molaMesh)
         {
