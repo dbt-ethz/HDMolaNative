@@ -24,8 +24,17 @@ namespace Mola
         public static int FACE2 = 3;
         //static int NONE = -1;
         public List<Vec3> UVs { get => uvs; set => uvs = value; }
+        /// <summary>
+        /// A list of faces. Each face is represented by an array of vertex index. 
+        /// </summary>
         public List<int[]> Faces { get => faces; set => faces = value; }
+        /// <summary>
+        /// A list of Mola Vec3.
+        /// </summary>
         public List<Vec3> Vertices { get => vertices; set => vertices = value; }
+        /// <summary>
+        /// A list of Mola Colors.
+        /// </summary>
         public List<Color> Colors { get => vertexColors; set => vertexColors = value; }
         /// <summary>
         /// Create a MolaMesh
@@ -94,6 +103,10 @@ namespace Mola
             copyMesh.vertexColors = this.vertexColors;
             return copyMesh;
         }
+        /// <summary>
+        /// Make a copy of this MolaMesh
+        /// </summary>
+        /// <returns>The copyed MolaMesh</returns>
         public MolaMesh Copy()
         {
             MolaMesh copyMesh = new MolaMesh();
@@ -318,10 +331,18 @@ namespace Mola
             vs[3] = this.AddVertex(x4, y4, z4);
             return vs;
         }
+        /// <summary>
+        /// Get the vertex count of this MolaMesh
+        /// </summary>
+        /// <returns>The vertex count</returns>
         public int VertexCount()
         {
             return vertices.Count;
         }
+        /// <summary>
+        /// Get the face count of this MolaMesh
+        /// </summary>
+        /// <returns>The face count</returns>
         public int FacesCount()
         {
             return faces.Count;
