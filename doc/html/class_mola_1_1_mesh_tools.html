@@ -239,12 +239,14 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A boolean Array</dd></dl>
-<h3><a class="anchor" id="autotoc_md0"></a>
+<h3><a class="anchor" id="autotoc_md1"></a>
 Example</h3>
 <div class="fragment"><div class="line"><a class="code hl_class" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh = <a class="code hl_class" href="class_mola_1_1_mesh_factory.html">MeshFactory</a>.<a class="code hl_function" href="class_mola_1_1_mesh_factory.html#a9cc7f5373b4b6a2ad56481aaa3cbe8cc">CreateSphere</a>();</div>
-<div class="line">List&lt;float&gt; faceArea = MeshAnalysis.FaceArea(molaMesh);</div>
+<div class="line">List&lt;float&gt; faceArea = <a class="code hl_class" href="class_mola_1_1_mesh_analysis.html">MeshAnalysis</a>.<a class="code hl_function" href="class_mola_1_1_mesh_analysis.html#a34e500c6531728acca9228f6d74945e5">FaceArea</a>(molaMesh);</div>
 <div class="line">Predicate&lt;float&gt; filter = a =&gt; a &gt; 1;</div>
 <div class="line"><span class="keywordtype">bool</span>[] mask = MeshUtils.FaceMask(faceArea, filter);</div>
+<div class="ttc" id="aclass_mola_1_1_mesh_analysis_html"><div class="ttname"><a href="class_mola_1_1_mesh_analysis.html">Mola.MeshAnalysis</a></div><div class="ttdoc">A collection of methods to analyze MolaMesh Face.</div><div class="ttdef"><b>Definition</b> MeshAnalysis.cs:12</div></div>
+<div class="ttc" id="aclass_mola_1_1_mesh_analysis_html_a34e500c6531728acca9228f6d74945e5"><div class="ttname"><a href="class_mola_1_1_mesh_analysis.html#a34e500c6531728acca9228f6d74945e5">Mola.MeshAnalysis.FaceArea</a></div><div class="ttdeci">static List&lt; float &gt; FaceArea(MolaMesh molaMesh)</div><div class="ttdoc">Get the area value of each face of a MolaMesh.</div><div class="ttdef"><b>Definition</b> MeshAnalysis.cs:18</div></div>
 <div class="ttc" id="aclass_mola_1_1_mesh_factory_html"><div class="ttname"><a href="class_mola_1_1_mesh_factory.html">Mola.MeshFactory</a></div><div class="ttdoc">A collection of methods to create MolaMEsh Premitives.</div><div class="ttdef"><b>Definition</b> MeshFactory.cs:11</div></div>
 <div class="ttc" id="aclass_mola_1_1_mesh_factory_html_a9cc7f5373b4b6a2ad56481aaa3cbe8cc"><div class="ttname"><a href="class_mola_1_1_mesh_factory.html#a9cc7f5373b4b6a2ad56481aaa3cbe8cc">Mola.MeshFactory.CreateSphere</a></div><div class="ttdeci">static MolaMesh CreateSphere(float radius=1, float cx=0, float cy=0, float cz=0, int u_res=10, int v_res=10, Color? color=null)</div><div class="ttdoc">Constructs a uv sphere mesh.</div><div class="ttdef"><b>Definition</b> MeshFactory.cs:632</div></div>
 <div class="ttc" id="aclass_mola_1_1_mola_mesh_html"><div class="ttname"><a href="class_mola_1_1_mola_mesh.html">Mola.MolaMesh</a></div><div class="ttdoc">A mesh describes a 3D surface made of Vertices connected by Faces.</div><div class="ttdef"><b>Definition</b> MolaMesh.cs:12</div></div>

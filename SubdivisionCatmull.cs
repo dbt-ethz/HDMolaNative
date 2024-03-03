@@ -16,8 +16,8 @@ namespace Mola
             MolaMesh newMesh = new MolaMesh();
             // For each face, add a face point
             // Set each face point to be the average of all original points for the respective face.
+            meshInput.UpdateTopology();
 
-           
             Vec3[] centers = meshInput.CalculateFaceCenters();
 
             if (faceExtrusions == null)

@@ -16,6 +16,7 @@
     <Compile Remove="box-3a8da.cs" />
     <Compile Remove="Boxes-2e894.cs" />
     <Compile Remove="BoxW-2be77.cs" />
+    <Compile Remove="cone-50cd2.cs" />
   </ItemGroup>
 
 </Project>

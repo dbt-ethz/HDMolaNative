@@ -4,6 +4,9 @@ using System.Runtime.CompilerServices;
 
 namespace Mola
 {
+    /// <summary>
+    /// Mola Vector
+    /// </summary>
     public partial struct Vec3 : IEquatable<Vec3>, IFormattable
     {
         // *Undocumented*
@@ -11,13 +14,18 @@ namespace Mola
         // *Undocumented*
         public const float kEpsilonNormalSqrt = 1e-15F;
 
-        // X component of the vector.
+        /// <summary>
+        /// X component of the vector.
+        /// </summary>
         public float x;
-        // Y component of the vector.
+        /// <summary>
+        /// Y component of the vector.
+        /// </summary>
         public float y;
-        // Z component of the vector.
+        /// <summary>
+        /// Z component of the vector.
+        /// </summary>
         public float z;
-
 
 
         // Linearly interpolates between two vectors.
@@ -61,9 +69,6 @@ namespace Mola
         }
 
 
-
-
-
         // Access the x, y, z components using [0], [1], [2] respectively.
         public float this[int index]
         {
@@ -92,7 +97,6 @@ namespace Mola
             }
         }
 
-       
         public  Vec3 Rotate(  float degrees)
         {
 
@@ -389,17 +393,14 @@ namespace Mola
             // Returns true in the presence of NaN values.
             return !(lhs == rhs);
         }
-
         public override string ToString()
         {
             return ToString(null, null);
         }
-
         public string ToString(string format)
         {
             return ToString(format, null);
         }
-
         public string ToString(string format, IFormatProvider formatProvider)
         {
             if (string.IsNullOrEmpty(format))
@@ -409,8 +410,6 @@ namespace Mola
             return "" + x.ToString(format, formatProvider) + " " + y.ToString(format, formatProvider) + " " + z.ToString(format, formatProvider);
         }
 
-
-        
     }
 }
 
