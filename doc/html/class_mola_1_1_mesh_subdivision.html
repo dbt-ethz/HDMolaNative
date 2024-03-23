@@ -102,6 +102,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a602e16bee4859442d4a7859514cf79b2" id="r_a602e16bee4859442d4a7859514cf79b2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a602e16bee4859442d4a7859514cf79b2">Extrude</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, List&lt; float &gt; heights, List&lt; bool &gt; capTops)</td></tr>
 <tr class="memdesc:a602e16bee4859442d4a7859514cf79b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrudes the all faces in a MolaMesh straight by a list distance height.  <br /></td></tr>
 <tr class="separator:a602e16bee4859442d4a7859514cf79b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8dbbf2507a01ff90f6e575b4f6661e2" id="r_aa8dbbf2507a01ff90f6e575b4f6661e2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8dbbf2507a01ff90f6e575b4f6661e2">ExtrudeAlongVec</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, List&lt; <a class="el" href="struct_mola_1_1_vec3.html">Vec3</a> &gt; directions, List&lt; float &gt; heights, List&lt; bool &gt; capTops)</td></tr>
+<tr class="memdesc:aa8dbbf2507a01ff90f6e575b4f6661e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrudes the all faces in a MolaMesh along a list of directions and by a list distance height.  <br /></td></tr>
+<tr class="separator:aa8dbbf2507a01ff90f6e575b4f6661e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26b99635f7ebb469061e67e72241c342" id="r_a26b99635f7ebb469061e67e72241c342"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26b99635f7ebb469061e67e72241c342">ExtrudeAlongVec</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, <a class="el" href="struct_mola_1_1_vec3.html">Vec3</a> direction, float height, bool capTop=true)</td></tr>
+<tr class="memdesc:a26b99635f7ebb469061e67e72241c342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrudes the all faces in a MolaMesh along a direction by a single distance height.  <br /></td></tr>
+<tr class="separator:a26b99635f7ebb469061e67e72241c342"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01eba07f22ef9487188a6910bd15fd5b" id="r_a01eba07f22ef9487188a6910bd15fd5b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01eba07f22ef9487188a6910bd15fd5b">ExtrudeTapered</a> (<a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> molaMesh, float height, float fraction, bool capTop)</td></tr>
 <tr class="memdesc:a01eba07f22ef9487188a6910bd15fd5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrudes all face in a MolaMesh tapered like a window by creating an offset face and quads between every original edge and the corresponding new edge.  <br /></td></tr>
 <tr class="separator:a01eba07f22ef9487188a6910bd15fd5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -282,6 +288,109 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result MolaMesh</dd></dl>
 <p><img src="extrude.png" alt="" class="inline"/>     </p>
+
+</div>
+</div>
+<a id="aa8dbbf2507a01ff90f6e575b4f6661e2" name="aa8dbbf2507a01ff90f6e575b4f6661e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8dbbf2507a01ff90f6e575b4f6661e2">&#9670;&#160;</a></span>ExtrudeAlongVec() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> ExtrudeAlongVec </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a></td>          <td class="paramname"><span class="paramname"><em>molaMesh</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">List&lt; <a class="el" href="struct_mola_1_1_vec3.html">Vec3</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>directions</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">List&lt; float &gt;</td>          <td class="paramname"><span class="paramname"><em>heights</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">List&lt; bool &gt;</td>          <td class="paramname"><span class="paramname"><em>capTops</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Extrudes the all faces in a MolaMesh along a list of directions and by a list distance height. </p>
+<p>The list length must much the face count.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">molaMesh</td><td>A MolaMesh</td></tr>
+    <tr><td class="paramname">directions</td><td>A list of Vec3</td></tr>
+    <tr><td class="paramname">heights</td><td>A list Extruding height</td></tr>
+    <tr><td class="paramname">capTops</td><td>A list of bool to decide Wether to cap the top or not</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result MolaMesh</dd></dl>
+
+</div>
+</div>
+<a id="a26b99635f7ebb469061e67e72241c342" name="a26b99635f7ebb469061e67e72241c342"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26b99635f7ebb469061e67e72241c342">&#9670;&#160;</a></span>ExtrudeAlongVec() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a> ExtrudeAlongVec </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_mola_1_1_mola_mesh.html">MolaMesh</a></td>          <td class="paramname"><span class="paramname"><em>molaMesh</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_mola_1_1_vec3.html">Vec3</a></td>          <td class="paramname"><span class="paramname"><em>direction</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>height</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>capTop</em><span class="paramdefsep"> = </span><span class="paramdefval">true</span></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Extrudes the all faces in a MolaMesh along a direction by a single distance height. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">molaMesh</td><td>A MolaMesh</td></tr>
+    <tr><td class="paramname">direction</td><td>A Vec3 for direction</td></tr>
+    <tr><td class="paramname">height</td><td>Extruding height</td></tr>
+    <tr><td class="paramname">capTop</td><td>Wether to cp the top or not</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result MolaMesh</dd></dl>
 
 </div>
 </div>
