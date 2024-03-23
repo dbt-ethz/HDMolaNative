@@ -318,6 +318,42 @@ public class FaceSubdivision
 
         return new_faces_vertices;
     }
+    public static List<Vec3[]> Extrude(Vec3[] face_vertices, Vec3 direction, float height, bool capTop = true)
+    {
+        Vec3 normal = direction.Normalize();
+        normal *= height;
+
+        List<Vec3> new_vertices = new List<Vec3>();
+        foreach (Vec3 v in face_vertices)
+        {
+            new_vertices.Add(v + normal);
+        }
+
+        List<Vec3[]> new_faces_vertices = new();
+
+        for (int i = 0; i < face_vertices.Length; i++)
+        {
+            Vec3 v0 = face_vertices[i];
+            Vec3 v1 = face_vertices[(i + 1) % face_vertices.Length];
+            Vec3 v2 = new_vertices[(i + 1) % face_vertices.Length];
+            Vec3 v3 = new_vertices[i];
+
+            new_faces_vertices.Add(new Vec3[] { v0, v1, v2, v3 });
+        }
+
+        if (capTop)
+        {
+            new_faces_vertices.Add(new_vertices.ToArray());
+        }
+        // optimize
+        Vec3[] newVertices = new Vec3[face_vertices.Length];
+        for (int i = 0; i < face_vertices.Length; i++)
+        {
+            newVertices[i] = face_vertices[i] + normal;
+        }
+
+        return new_faces_vertices;
+    }
 
     /// <summary>
     /// Extrude a face to a new point offset from its center 

@@ -63,6 +63,51 @@ namespace Mola
             return newMesh;
         }
         /// <summary>
+        /// Extrudes the all faces in a MolaMesh along a direction by a single distance height.
+        /// </summary>
+        /// <param name="molaMesh">A MolaMesh</param>
+        /// <param name="direction">A Vec3 for direction</param>
+        /// <param name="height">Extruding height</param>
+        /// <param name="capTop">Wether to cp the top or not</param>
+        /// <returns>The result MolaMesh</returns>
+        public static MolaMesh ExtrudeAlongVec(MolaMesh molaMesh, Vec3 direction, float height, bool capTop = true)
+        {
+            MolaMesh newMesh = new();
+            for (int i = 0; i < molaMesh.Faces.Count; i++)
+            {
+                List<Vec3[]> new_faces_vertices = FaceSubdivision.Extrude(molaMesh.FaceVertices(i), direction, height, capTop);
+                foreach (var face_vertices in new_faces_vertices)
+                {
+                    newMesh.AddFace(face_vertices);
+                }
+            }
+            return newMesh;
+        }
+        /// <summary>
+        /// Extrudes the all faces in a MolaMesh along a list of directions and by a list distance height. The list length must much the face count.
+        /// </summary>
+        /// <param name="molaMesh">A MolaMesh</param>
+        /// <param name="directions">A list of Vec3</param>
+        /// <param name="heights">A list Extruding height</param>
+        /// <param name="capTops">A list of bool to decide Wether to cap the top or not</param>
+        /// <returns>The result MolaMesh</returns>
+        public static MolaMesh ExtrudeAlongVec(MolaMesh molaMesh, List<Vec3> directions, List<float> heights, List<bool> capTops)
+        {
+            if (heights.Count != molaMesh.FacesCount() || capTops.Count != molaMesh.FacesCount()
+                || directions.Count != molaMesh.FacesCount()
+                )
+            {
+                throw new ArgumentException("list count doesn't match face count!");
+            }
+            MolaMesh newMesh = new MolaMesh();
+            for (int i = 0; i < molaMesh.Faces.Count; i++)
+            {
+                List<Vec3[]> new_faces_vertices = FaceSubdivision.Extrude(molaMesh.FaceVertices(i), directions[i], heights[i], capTops[i]);
+                newMesh.AddFaces(new_faces_vertices);
+            }
+            return newMesh;
+        }
+        /// <summary>
         /// Splits all triangle or quad faces in a MolaMesh into regular grids
         /// </summary>
         /// <param name="molaMesh">A MolaMesh</param>
