@@ -5,7 +5,7 @@ using System.Linq;
 namespace Mola
 {
     /// <summary>
-    /// A `GridManager` is taking care of getting and setting values
+    /// A `MolaGrid` is taking care of getting and setting values
     /// and retrieving neighbors in an orthogonal grid of either 2 or 3 dimension.
     /// </summary>
     public class MolaGrid<T> : IEnumerable
@@ -18,7 +18,7 @@ namespace Mola
         /// <param name="nZ">Z dimention</param>
         /// ### Example
         /// ~~~~~~~~~~~~~~~~~~~~~~.cs
-        /// MolaGrid grid = new MolaGrid(10, 10, 10);
+        /// MolaGrid<bool> grid = new MolaGrid<bool>(10, 10, 10);
         /// ~~~~~~~~~~~~~~~~~~~~~~
         public MolaGrid(int nX, int nY, int nZ)
         {
@@ -127,6 +127,16 @@ namespace Mola
             kernel[4] = new int[] { 0, 1, 0 };
             kernel[5] = new int[] { 0, -1, 0 };
             return GetNbs(kernel);
+        }
+        public MolaGrid<T> Copy()
+        {
+            MolaGrid<T> copyGrid = new MolaGrid<T>(nX, nY, nZ);
+            for (int i = 0; i < this.values.Count; i++)
+            {
+                copyGrid.values[i] = this.values[i];
+            }
+
+            return copyGrid;
         }
     }
 }
