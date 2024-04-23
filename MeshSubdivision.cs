@@ -236,25 +236,25 @@ namespace Mola
         ///// <summary>
         ///// Split each face in a quad MolaMesh into three quads in one direction 
         ///// by specifying the range to generate random widths of the first two segments.
-        ///// </summary>
-        ///// <param name="molaMesh">A MolaMesh</param>
-        ///// <param name="borderWidth1">An absolute distance from one side of border</param>
-        ///// <param name="borderWidth2">An absolute distance from one side of border</param>
-        ///// <param name="dir"></param>
-        ///// <returns>The result MolaMesh</returns>
-        //public static MolaMesh LinearSplitBorder(MolaMesh molaMesh, float borderWidth1 = 1f, float borderWidth2 = 1, int dir = 0)
-        //{
-        //    MolaMesh newMesh = new();
-        //    for (int i = 0; i < molaMesh.FacesCount(); i++)
-        //    {
-        //        List<Vec3[]> new_faces_vertices = FaceSubdivision.LinearSplitQuadBorder(molaMesh.FaceVertices(i), borderWidth1, borderWidth2, dir);
-        //        foreach (var face_vertices in new_faces_vertices)
-        //        {
-        //            newMesh.AddFace(face_vertices);
-        //        }
-        //    }
-        //    return newMesh;
-        //}
+        /// </summary>
+        /// <param name="molaMesh">A MolaMesh</param>
+        /// <param name="borderWidth1">An absolute distance from one side of border</param>
+        /// <param name="borderWidth2">An absolute distance from one side of border</param>
+        /// <param name="dir"></param>
+        /// <returns>The result MolaMesh</returns>
+        public static MolaMesh LinearSplitBorder(MolaMesh molaMesh, float borderWidth1 = 1f, float borderWidth2 = 1, int dir = 0)
+        {
+            MolaMesh newMesh = new();
+            for (int i = 0; i < molaMesh.FacesCount(); i++)
+            {
+                List<Vec3[]> new_faces_vertices = FaceSubdivision.LinearSplitQuadBorder(molaMesh.FaceVertices(i), borderWidth1, borderWidth2, dir);
+                foreach (var face_vertices in new_faces_vertices)
+                {
+                    newMesh.AddFace(face_vertices);
+                }
+            }
+            return newMesh;
+        }
         /// <summary>
         /// Split each face in a quad MolaMesh into three quads in one direction 
         /// by specifying the range to generate random widths of the first two segments.
