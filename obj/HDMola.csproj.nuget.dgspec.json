@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\D\\GitHub\\HDMolaNative\\HDMola.csproj": {}
+    "/Users/yang/GitHub/HDMolaNative/HDMola.csproj": {}
   },
   "projects": {
-    "C:\\D\\GitHub\\HDMolaNative\\HDMola.csproj": {
+    "/Users/yang/GitHub/HDMolaNative/HDMola.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\D\\GitHub\\HDMolaNative\\HDMola.csproj",
+        "projectUniqueName": "/Users/yang/GitHub/HDMolaNative/HDMola.csproj",
         "projectName": "HDMola",
-        "projectPath": "C:\\D\\GitHub\\HDMolaNative\\HDMola.csproj",
-        "packagesPath": "C:\\Users\\Wenqian\\.nuget\\packages\\",
-        "outputPath": "C:\\D\\GitHub\\HDMolaNative\\obj\\",
+        "projectPath": "/Users/yang/GitHub/HDMolaNative/HDMola.csproj",
+        "packagesPath": "/Users/yang/.nuget/packages/",
+        "outputPath": "/Users/yang/GitHub/HDMolaNative/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Wenqian\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/yang/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -53,12 +47,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "NETStandard.Library.Ref",
+              "version": "[2.1.0, 2.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "NETStandard.Library": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/yang/Library/Caches/VisualStudio/8.0/MSBuild/15969_1/RuntimeIdentifierGraph.json"
         }
       }
     }

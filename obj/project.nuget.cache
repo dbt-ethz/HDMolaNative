@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "4ER5aaoTwbjaOfTEiWoxVN3obNHUNFWcCjixFlFvYFLINbOwySmB1rQb0zkPDlMiG7ahkDN2rr1rosrH0fNm0Q==",
+  "dgSpecHash": "/A1Ktxha3ReKeJb8uOMdeQ64xbcPZzKEhR2d/et8ui+bQQwx9qo8FSBOZQXaxri9PD0SOABmyDo6OdQSLMlDmg==",
   "success": true,
-  "projectFilePath": "C:\\D\\GitHub\\HDMolaNative\\HDMola.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/Users/yang/GitHub/HDMolaNative/HDMola.csproj",
+  "expectedPackageFiles": [
+    "/Users/yang/.nuget/packages/netstandard.library.ref/2.1.0/netstandard.library.ref.2.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -160,14 +160,15 @@ namespace Mola
         public static float FaceProportion(Vec3[] face_vertices)
         {
             Vec3 v0 = face_vertices[face_vertices.Length - 1];
-            float dmax = 0.1f;
-            float dmin = 0.1f;
+            Vec3 v00 = face_vertices[0];
+            float dmax = (v00 - v0).magnitude;
+            float dmin = (v00 - v0).magnitude;
             for (int i = 0; i < face_vertices.Length; i++)
             {
                 Vec3 v1 = face_vertices[i];
                 float dtemp = (v1 - v0).magnitude;
                 if (dmax < dtemp) dmax = dtemp;
-                else if (dmin > dtemp) dmin = dtemp; 
+                if (dmin > dtemp) dmin = dtemp; 
                 v0 = v1;
             }
             return dmax/dmin;
