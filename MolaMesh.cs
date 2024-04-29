@@ -1137,5 +1137,9 @@ namespace Mola
         {
             return UtilsFace.FaceCompactness(FaceVertices(faceIndex));
         }
+        public float FaceProportion(int faceIndex)
+        {
+            return UtilsFace.FaceProportion(FaceVertices(faceIndex));
+        }
     }
 }
