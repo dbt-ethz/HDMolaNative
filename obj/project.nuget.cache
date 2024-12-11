@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "eQXkk4AU4yIut1RrOpShXzs7CdAeqoXTSd/6t5TXiqtBdMOLnLBeWfn9tuEafuXbLdI0TPPLN6OvS+tLU++Img==",
+  "dgSpecHash": "SVrCNnYZ73HA1A/fpJm5Dz0FoCy2ro4BwxrVWW+OG6vDb58idnvrPbfDZgazCe4HRZmf/As4kqpogn0t18Fnww==",
   "success": true,
-  "projectFilePath": "/Users/yang/GitHub/HDMolaNative/HDMola.csproj",
+  "projectFilePath": "C:\\D\\GitHub\\HDMolaNative\\HDMola.csproj",
   "expectedPackageFiles": [
-    "/Users/yang/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
-    "/Users/yang/.nuget/packages/netstandard.library.ref/2.1.0/netstandard.library.ref.2.1.0.nupkg.sha512"
+    "C:\\Users\\Wenqian\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []
 }
