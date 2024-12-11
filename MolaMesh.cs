@@ -50,40 +50,14 @@ namespace Mola
             faces = new List<int[]>();
             Colors = new List<Color>();
         }
-        //public override string ToString()
-        //{
-        //    List<string> vertexparts = new List<string>();
-        //    foreach (Vec3 v in vertices)
-        //    {
-        //        vertexparts.Add($"[{v.ToString()}]");
-        //    }
-        //    string vertexstr = string.Join(",", vertexparts);
-
-        //    List<string> faceparts = new List<string>();
-        //    foreach (var f in faces)
-        //    {
-        //        string result = $"[{string.Join(", ", f)}]";
-        //        faceparts.Add(result);
-        //    }
-        //    string facestr = string.Join(",", faceparts);
-
-        //    List<string> colorparts = new List<string>();
-        //    foreach (Color c in Colors)
-        //    {
-        //        colorparts.Add($"[{c.ToString()}]");
-        //    }
-        //    string colorstr = string.Join(",", colorparts);
-
-        //    List<string> parts = new List<string>();
-        //    parts.Add($"verties: {{{vertexstr}}}");
-        //    parts.Add($"faces: {{{facestr}}}");
-        //    parts.Add($"Colors: {{{colorstr}}}");
-            
-        //    return string.Join(",", parts);
-        //}
         public string ToJson()
-        { 
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+        {
+            var settings = new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore, // Prevent self-referencing errors
+                Formatting = Formatting.Indented
+            };
+            return JsonConvert.SerializeObject(this, settings);
         }
         public static MolaMesh FromJson(string json)
         {
