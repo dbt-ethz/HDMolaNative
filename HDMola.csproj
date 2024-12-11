@@ -9,6 +9,7 @@
     <Compile Remove="examples\**" />
     <EmbeddedResource Remove="examples\**" />
     <None Remove="examples\**" />
+    <None Remove="Newtonsoft.Json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,4 +20,7 @@
     <Compile Remove="cone-50cd2.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
 </Project>

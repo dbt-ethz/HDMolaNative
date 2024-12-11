@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using Newtonsoft.Json;
 
 namespace Mola
 {
@@ -45,9 +46,48 @@ namespace Mola
         /// ~~~~~~~~~~~~~~
         public MolaMesh()
         {
-            this.vertices = new List<Vec3>();
-            this.faces = new List<int[]>();
-            this.Colors = new List<Color>();
+            vertices = new List<Vec3>();
+            faces = new List<int[]>();
+            Colors = new List<Color>();
+        }
+        //public override string ToString()
+        //{
+        //    List<string> vertexparts = new List<string>();
+        //    foreach (Vec3 v in vertices)
+        //    {
+        //        vertexparts.Add($"[{v.ToString()}]");
+        //    }
+        //    string vertexstr = string.Join(",", vertexparts);
+
+        //    List<string> faceparts = new List<string>();
+        //    foreach (var f in faces)
+        //    {
+        //        string result = $"[{string.Join(", ", f)}]";
+        //        faceparts.Add(result);
+        //    }
+        //    string facestr = string.Join(",", faceparts);
+
+        //    List<string> colorparts = new List<string>();
+        //    foreach (Color c in Colors)
+        //    {
+        //        colorparts.Add($"[{c.ToString()}]");
+        //    }
+        //    string colorstr = string.Join(",", colorparts);
+
+        //    List<string> parts = new List<string>();
+        //    parts.Add($"verties: {{{vertexstr}}}");
+        //    parts.Add($"faces: {{{facestr}}}");
+        //    parts.Add($"Colors: {{{colorstr}}}");
+            
+        //    return string.Join(",", parts);
+        //}
+        public string ToJson()
+        { 
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
+        }
+        public static MolaMesh FromJson(string json)
+        {
+            return JsonConvert.DeserializeObject<MolaMesh>(json);
         }
         public Vec3[] CalculateFaceCenters()
         {
